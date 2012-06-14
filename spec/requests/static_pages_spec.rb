@@ -7,8 +7,9 @@ describe "StaticPages" do
 	describe "Home Page" do
 		before{ visit '/static_pages/home' }
 
-		it {should have_selector('title', text: "HOME")}
-		it {should have_selector('h1', text: "HOME")}
+		it {should have_selector('title', text: "TKCC BAND APP") }
+		it { should have_selector('h1', text: "HOME") }
+		it { should_not have_selector('title', text: "HOME"	) }
 	end
 
 	describe "Planning" do
