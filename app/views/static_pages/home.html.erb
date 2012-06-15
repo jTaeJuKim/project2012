@@ -1,14 +1,8 @@
 <!DOCTYPE html>
-<h1>HOME</h1>
-<p>
-	<ul>
-  		<li><a href="/static_pages/planning">PLANNING</a></li>
-  		<li><a href="/static_pages/scheduling">SCHEDULING</a></li>
-  		<li><a href="/static_pages/people">PEOPLE</a></li>
-  		<li><a href="/static_pages/library">LIBRARY</a></li>
-  	</ul>
-    <p>Find me in app/views/static_pages/home.html.erb</p>
-  	<p>This will be the home page for the Kings Community Church Worship Planning App</p>
-  	<p>When the user is not logged in, this will display the login page</p>
-</p>
+<div class="center hero unit">
+	<h1>Welcome to the home page for the TKCC Worship Planning App</h1>
+	<h2>This page is still under construction, but for more details contact Justin Kim at TKCC</h2>
+	<%= link_to "LOG IN", '#', class: "btn btn-large btn-primary" %>
+</div>
+<%= link_to image_tag("WIP.jpg", alt: "Work in Progress", width: "320px", height: "auto", id: "WIP"), 'http://doctorcatmd.com/2011-01-10/doctor-cat' %>
  
