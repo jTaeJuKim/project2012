@@ -5,14 +5,14 @@ describe "StaticPages" do
 	subject { page }
 	
 	describe "Home Page" do
-		before{ visit '/static_pages/home' }
+		before{ visit root_path }
 
 		it {should have_selector('title', text: "TKCC BAND APP") }
 		it { should_not have_selector('title', text: "HOME"	) }
 	end
 
 	describe "Planning" do
-		before{ visit '/static_pages/planning' }
+		before{ visit planning_path }
 
 		it { should have_selector('title', text: "PLANNING") }
 		it { should have_selector('h1', text: "PLANNING") }
@@ -20,21 +20,21 @@ describe "StaticPages" do
 
 
 	describe "Scheduling" do
-		before{ visit '/static_pages/scheduling' }
+		before{ visit scheduling_path }
 
 		it { should have_selector('title', text: "SCHEDULING") }
 		it { should have_selector('h1', text: "SCHEDULING") }
 	end
 
 	describe "People" do
-		before{ visit '/static_pages/people'}
+		before{ visit people_path }
 
 		it{ should have_selector('title', text: "PEOPLE") }
 		it{ should have_selector('h1', text: "PEOPLE") }
 	end
 
 	describe "Library" do
-		before{ visit '/static_pages/library' }
+		before{ visit library_path }
 
 		it{ should have_selector('title', text: "LIBRARY") }
 		it{ should have_selector('h1', text: "LIBRARY") }

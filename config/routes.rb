@@ -1,5 +1,6 @@
 Proj::Application.routes.draw do
 
+
   root to: 'static_pages#home'
 
   match '/planning', to: 'static_pages#planning'
@@ -7,11 +8,8 @@ Proj::Application.routes.draw do
   match '/library', to: 'static_pages#library'
   match '/people', to: 'static_pages#people'
 
-  #get "static_pages/home"
-  #get "static_pages/planning"
-  #get "static_pages/scheduling"
-  #get "static_pages/library"
-  #get "static_pages/people"
+  match '/new_user', to: 'users#new'
+
   
 
   # The priority is based upon order of creation:
