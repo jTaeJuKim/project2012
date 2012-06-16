@@ -1,6 +1,7 @@
 Proj::Application.routes.draw do
 
-
+  resources :users
+  
   root to: 'static_pages#home'
 
   match '/planning', to: 'static_pages#planning'
