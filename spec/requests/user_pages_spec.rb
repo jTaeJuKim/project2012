@@ -7,6 +7,6 @@ describe "UserPages" do
   describe "New User Page" do
   	before{ visit new_user_path }
 
-  	it{ should have_selector('h1', text: "Create a new user")}
+  	it{ should have_selector('h1', text: "Sign Up")}
   end
 end
