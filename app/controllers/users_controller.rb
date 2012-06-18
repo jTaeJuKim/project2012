@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	if @user.save
   		#successful save
+      #user automatically signed in
+      sign_in @user
   		flash[:success] = "Congratulations, you've created your band app account!"
   		redirect_to @user
   	else

@@ -1,6 +1,7 @@
 Proj::Application.routes.draw do
 
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   
   root to: 'static_pages#home'
 
@@ -10,6 +11,8 @@ Proj::Application.routes.draw do
   match '/people', to: 'static_pages#people'
 
   match '/new_user', to: 'users#new'
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   
 

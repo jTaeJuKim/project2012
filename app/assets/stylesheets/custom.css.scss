@@ -18,7 +18,6 @@ textarea {
   resize: vertical;
 }
 
-
 .center {
   text-align: center;
 }
@@ -89,3 +88,4 @@ input, textarea, select, .uneditable-input {
   @extend .control-group;
   @extend .error;
  }
+

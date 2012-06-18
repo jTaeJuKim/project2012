@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <div class="center hero unit">
+	<% if signed_in? %>
 	<table class = "table table-striped">
 		<thead>
 			<tr>
@@ -18,6 +19,7 @@
 			</tr>
 	    </thead>
 	    <tbody>
+	    	<% 12.times do %>
 	    	<tr>
 	    		<td>01-July-2012</td>
 	    		<td>Jo Gordon</td>
@@ -27,41 +29,17 @@
 	    		<td>Justin Kim</td>
 	    		<td>Michael Robertson</td>
 	    		<td>Tony Duncan</td>
-	    		<td>N/A</td>
+	    		<td>Fran Hutchison</td>
 	    		<td>Team 1</td>
 	    		<td>Lily Fox-Davies</td>
 	    		<td>Dan Clews</td>
 	    	</tr>
-	    	<tr>
-	    		<td>08-July-2012</td>
-	    		<td>Jo Gordon</td>
-	    		<td>Andy West</td>
-	    		<td>Gareth Donaldson</td>
-	    		<td>Helen Rowe</td>
-	    		<td>Gareth Boswell</td>
-	    		<td>Michael Robertson</td>
-	    		<td>Chloe Kerr</td>
-	    		<td>N/A</td>
-	    		<td>Team 2</td>
-	    		<td>Lal Dhillon</td>
-	    		<td>Lily Fox-Davies</td>
-	    	</tr>
-	    	<tr>
-	    		<td>15-July-2012</td>
-	    		<td>Jo Gordon</td>
-	    		<td>Graham Dargie</td>
-	    		<td>Gareth Donaldson</td>
-	    		<td>Rachael West</td>
-	    		<td>Justin Kim</td>
-	    		<td>Michael Robertson</td>
-	    		<td>Tony Duncan</td>
-	    		<td>Fran Hutchison</td>
-	    		<td>Team 3</td>
-	    		<td>Leon Harris</td>
-	    		<td>Dan Clews</td>
-	    	</tr>
+	    	<% end %>
 	    </tbody>
 	</table>
+	<%else%>
+	  <p><%= link_to image_tag("WIP.jpg", alt: "Work in Progress", width: "550px", height: "auto", id: "WIP"), 'http://doctorcatmd.com/2011-01-10/doctor-cat' %></p>
+	<%end%>
 </div>
-<%= link_to image_tag("WIP.jpg", alt: "Work in Progress", width: "300px", height: "auto", id: "WIP"), 'http://doctorcatmd.com/2011-01-10/doctor-cat' %>
+
  
