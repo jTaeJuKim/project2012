@@ -1,10 +1,18 @@
 @import "bootstrap";
-
+/* Home page table */
+table{
+  position: center;
+}
 /* apply universally to website */
 
 html{
 	overflow-y: scroll;
 }
+
+.container{
+  width: 100%;
+}
+
 
 body{
 	padding-top: 50px;
