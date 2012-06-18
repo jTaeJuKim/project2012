@@ -5,12 +5,18 @@
   			<%= link_to "Band App", root_path, id: "logo" %>
   			<nav>
   				<ul class="nav pull-right">
-  					<li><%= link_to "HOME", root_path %></li>
-  					<li><%= link_to "PLANNING", planning_path %></li>
-  					<li><%= link_to "SCHEDULING", scheduling_path %></li>
-  					<li><%= link_to "PEOPLE", people_path %></li>
-  					<li><%= link_to "LIBRARY", library_path %></li> 
-            <li><%= link_to "SIGN IN", root_path %></li>
+            <%if signed_in?%>
+              <li><%= link_to "HOME", root_path %></li>
+  					  <li><%= link_to "PLANNING", planning_path %></li>
+  					  <li><%= link_to "SCHEDULING", scheduling_path %></li>
+  					  <li><%= link_to "PEOPLE", people_path %></li>
+  					  <li><%= link_to "LIBRARY", library_path %></li>
+              <li><%= link_to "SIGN OUT", signout_path, method: "delete" %></li>
+            <%else%>
+              <li><%= link_to "HOME", root_path %></li> 
+              <li><%= link_to "SIGN IN", signin_path %></li>
+              <li><%= link_to "SIGN UP", new_user_path %></li>
+            <%end%>
   				</ul>
   			</nav>
   		</div>
