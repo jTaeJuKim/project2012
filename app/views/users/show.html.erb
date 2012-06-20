@@ -1,2 +1,3 @@
 <title><% provide(:title, @user.name)%></title>
-<h1><%=@user.name%></h1>
+<h1>You are logged in as <%=@user.name + " " + @user.surname%></h1>
+<h1>Email: <%=@user.email%><br/>Phone: <%=@user.phone%></h1>
