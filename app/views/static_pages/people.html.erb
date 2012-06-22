@@ -1,5 +1,12 @@
 <% provide(:title, 'PEOPLE') %>
 <h1>PEOPLE</h1>
-<p>Find me in app/views/static_pages/people.html.erb</p>
-<p>This page will be used for adding/editing/deleting band members
-	The functions provided will also include adding roles</p>
+<h3>Welcome to the user management suite. Please select an option from below</h3>
+<p>
+	The functions provided for managing users include:
+	<ul>
+		<li><%=link_to "View all users", users_path%></li>
+		<li><%=link_to "Edit user", '#'%></li>
+		<li><%=link_to "Delete user", '#'%></li>
+	</ul>
+</p>
+
