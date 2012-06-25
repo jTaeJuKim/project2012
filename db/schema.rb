@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623190010) do
+ActiveRecord::Schema.define(:version => 20120625104836) do
 
   create_table "songs", :force => true do |t|
     t.string   "title"
     t.string   "artist"
-    t.text     "lyrics",     :limit => 255
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.text     "lyrics"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

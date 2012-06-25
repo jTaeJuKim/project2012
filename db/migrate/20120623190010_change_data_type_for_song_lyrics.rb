@@ -7,7 +7,7 @@ class ChangeDataTypeForSongLyrics < ActiveRecord::Migration
 
   def down
   	change_table :song do |t|
-  		t.change :lyrics, :string
+  		t.change :lyrics, :string 
   	end
   end
 end
