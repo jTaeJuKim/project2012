@@ -11,6 +11,7 @@
 #  remember_token  :string(255)
 #  surname         :string(255)
 #  phone           :string(255)
+#  admin           :boolean         default(FALSE)
 #
 
 class User < ActiveRecord::Base

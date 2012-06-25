@@ -1,8 +1,11 @@
 Proj::Application.routes.draw do
 
+  get "songs/new"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  
+  resources :songs
+
   root to: 'static_pages#home'
 
   match '/planning', to: 'static_pages#planning'

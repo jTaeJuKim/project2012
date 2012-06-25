@@ -11,4 +11,13 @@ FactoryGirl.define do
     	admin true
     end	
   end
+
+  factory :song do
+    title "Example Song"
+    artist "Example Artist"
+    lyrics "G          C             D
+            We stand and lift up our hands
+                    G          C             D
+            For the joy of the Lord is our strength"
+  end
 end
