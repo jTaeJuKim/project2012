@@ -75,6 +75,11 @@ footer {
 
 /* forms */
 
+/*search dropdown*/
+.control-group{
+  width: 65%;
+}
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -113,4 +118,5 @@ input, textarea, select, .uneditable-input {
     }
   }
 }
+
 

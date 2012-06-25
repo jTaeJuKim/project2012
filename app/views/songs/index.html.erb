@@ -1,9 +1,19 @@
 <% provide(:title, 'Browse Library') %>
 <h1>All songs</h1>
 <p>Note that the search function is still under construction</p>
+
 <form class="well form-search">  
   <input type="text" class="input-large search-query span10 offset1">  
-  <button type="submit" class="btn btn-large btn-primary">Search</button>  
+  <button type="submit" class="btn btn-large btn-primary">Search</button>
+  <div class="control-group">  
+  	<label class="control-label" for="sOptions">Search by</label>  
+    <div class="controls">  
+      <select id="sOptions">  
+       <option>Title</option>  
+       <option>Tags</option>  
+      </select> 
+    </div>
+  </div>    
 </form>  
 <table class="songs">
     <%= render @songs %>
