@@ -38,4 +38,41 @@ describe "Song pages" do
       end
     end
   end
+
+
+  describe "edit song" do
+
+    let(:song){ FactoryGirl.create(:song) }
+
+    before { visit edit_song_path(song) }
+
+    describe "page" do
+      it { should have_selector('h3',    text: "Edit song") }
+      it { should have_selector('title', text: "Edit song") }
+    end
+
+    describe "with invalid information" do
+      before do 
+        fill_in "Title", with: "" 
+        click_button "Save changes"
+      end
+
+      it { should have_content('error') }
+    end
+
+    describe "with valid information" do
+      let(:new_title) {"New Title"}
+      let(:new_artist) {"New Artist"}
+      let(:new_lyrics) {"New Lyrics"}
+      before do
+       fill_in "Title", with: new_title
+       fill_in "Artist", with: new_artist
+       fill_in "Lyrics", with: new_lyrics
+       click_button "Save changes"
+     end
+      it{ should have_selector('div.alert.alert-success') }
+    end
+  end
+
+
 end

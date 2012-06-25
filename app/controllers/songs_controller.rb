@@ -1,6 +1,23 @@
 class SongsController < ApplicationController
+
+  before_filter :signed_in_user
+
   def new
   	@song = Song.new
+  end
+
+  def edit
+    @song = Song.find(params[:id])
+  end
+
+  def update
+    @song = Song.find(params[:id])
+    if @song.update_attributes(params[:song])
+      flash[:success] = "Changes saved!"
+      redirect_to songs_path
+    else
+      render 'edit'
+    end
   end
 
   def index
@@ -23,3 +40,12 @@ class SongsController < ApplicationController
   	@song = Song.find(params[:id])
   end
 end
+
+private
+#if user isn't signed in this will redirect them to do so
+  def signed_in_user
+   unless signed_in?
+        store_location
+        redirect_to signin_path, notice: "No unauthorized access. Please sign in."
+      end
+    end

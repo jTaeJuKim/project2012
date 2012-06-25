@@ -8,9 +8,46 @@
             <%if signed_in?%>
               <li><%= link_to "HOME", root_path %></li>
   					  <li><%= link_to "PLANNING", planning_path %></li>
-  					  <li><%= link_to "SCHEDULING", scheduling_path %></li>
-  					  <li><%= link_to "PEOPLE", people_path %></li>
-  					  <li><%= link_to "LIBRARY", library_path %></li>
+  					  <!--scheduling_path %>-->
+
+
+               <li id="fat-menu" class="dropdown">
+                <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+                  SCHEDULING <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "BROWSE SET LISTS", '#' %></li>
+                  <li><%= link_to "CREATE SET LIST", '#' %></li>
+                  <li><%= link_to "EDIT SET LIST", '#' %></li>
+                </ul>
+              </li>
+  					  
+              <!--people_path -->
+
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+                  PEOPLE <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "BAND MEMBERS", users_path %></li>
+                  <li><%= link_to "ADD BAND MEMBER", new_user_path %></li>
+                </ul>
+              </li>
+
+
+  					  <!-- library_path -->
+
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+                  LIBRARY <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "BROWSE LIBRARY", songs_path %></li>
+                  <li><%= link_to "ADD SONGS", new_song_path %></li>
+                </ul>
+              </li>
+
+
               <li id="fat-menu" class="dropdown">
                 <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
                   ACCOUNT <b class="caret"></b>
