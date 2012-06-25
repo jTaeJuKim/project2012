@@ -7,7 +7,20 @@
   				<ul class="nav pull-right">
             <%if signed_in?%>
               <li><%= link_to "HOME", root_path %></li>
-  					  <li><%= link_to "PLANNING", planning_path %></li>
+
+
+  					  <!--planning_path %>-->
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+                  PLANNING <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "BROWSE SET LISTS", '#' %></li>
+                  <li><%= link_to "CREATE SET LIST", '#' %></li>
+                  <li><%= link_to "EDIT SET LIST", '#' %></li>
+                </ul>
+              </li>
+
   					  <!--scheduling_path %>-->
 
 
@@ -16,9 +29,8 @@
                   SCHEDULING <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "BROWSE SET LISTS", '#' %></li>
-                  <li><%= link_to "CREATE SET LIST", '#' %></li>
-                  <li><%= link_to "EDIT SET LIST", '#' %></li>
+                  <li><%= link_to "EDIT ROTA", '#' %></li>
+                  <li><%= link_to "NEW ROTA", '#' %></li>
                 </ul>
               </li>
   					  
