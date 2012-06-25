@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   end
 
   def index
-    @songs = Song.all
+    @songs = Song.all(order: 'title')
   end
 
   def create
