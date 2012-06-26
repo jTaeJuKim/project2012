@@ -10,14 +10,14 @@ namespace :db do
     admin.toggle!(:admin)
 
 
-    15.times do |n|
+    18.times do |n|
 
       first = ["Jo", "Gareth", "Graham", "Barry", "Fran",
       "Justin", "Helen", "Rachael", "Michael", "Graham",
-      "Chloe", "Tony", "Leon", "Andy", "Gareth"]
+      "Chloe", "Tony", "Leon", "Andy", "Gareth", "Lily", "Lal", "Dan"]
       last =["Gordon", "Donaldson", "Dargie", "McAllister", "Hutchison",
       "Kim", "Rowe", "West", "Robertson", "Alder",
-      "Kerr", "Duncan", "Harris", "West", "Boswell"]
+      "Kerr", "Duncan", "Harris", "West", "Boswell", "Fox-Davies", "Dhillon", "Clews"]
       name  = first[n-1] #Faker::Name.name replace faker with relevant sample
       surname = last[n-1] #"Schmidt"
       email = "example-#{n+1}@tkcc.org"
