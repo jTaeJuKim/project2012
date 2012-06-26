@@ -8,9 +8,18 @@ namespace :db do
                  password: "foobar",
                  password_confirmation: "foobar")
     admin.toggle!(:admin)
-    24.times do |n|
-      name  = Faker::Name.name
-      surname = "Schmidt"
+
+
+    15.times do |n|
+
+      first = ["Jo", "Gareth", "Graham", "Barry", "Fran",
+      "Justin", "Helen", "Rachael", "Michael", "Graham",
+      "Chloe", "Tony", "Leon", "Andy", "Gareth"]
+      last =["Gordon", "Donaldson", "Dargie", "McAllister", "Hutchison",
+      "Kim", "Rowe", "West", "Robertson", "Alder",
+      "Kerr", "Duncan", "Harris", "West", "Boswell"]
+      name  = first[n-1] #Faker::Name.name replace faker with relevant sample
+      surname = last[n-1] #"Schmidt"
       email = "example-#{n+1}@tkcc.org"
       password  = "password"
       phone= "01330999877"
