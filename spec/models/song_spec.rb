@@ -9,6 +9,7 @@ describe Song do
   it{ should respond_to(:title) }
   it{ should respond_to(:artist) }
   it{ should respond_to(:lyrics) }
+  it{ should respond_to(:key) }
 
   describe "when title is blank" do
   	before{ @song.title = "" }
@@ -33,8 +34,9 @@ end
 #  id         :integer         not null, primary key
 #  title      :string(255)
 #  artist     :string(255)
-#  lyrics     :text(255)
+#  lyrics     :text
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  key        :string(255)
 #
 

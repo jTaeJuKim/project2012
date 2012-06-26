@@ -19,5 +19,6 @@ FactoryGirl.define do
             We stand and lift up our hands
                     G          C             D
             For the joy of the Lord is our strength"
+    key "G"
   end
 end

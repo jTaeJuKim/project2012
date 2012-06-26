@@ -113,9 +113,9 @@ input, textarea, select, .uneditable-input {
     font-size: 16px;
     overflow: auto;
     padding: 15px 0;
-    border-top: 1px solid $grayLighter;
+    border-top: 2px solid #000;
     &:last-child {
-      border-bottom: 1px solid $grayLighter;
+      border-bottom: 2px solid #FFFF00;
     }
   }
 }

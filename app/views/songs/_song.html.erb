@@ -1,3 +1,5 @@
-<li>
-  <%= link_to song.title + " by " + song.artist, song %>
-</li>
+<tr>
+	<td><%= link_to song.title, song %></td>
+	<td><%= song.artist%> </td>
+	<td><%= "(" + song.key + ")"%></td>
+</tr>

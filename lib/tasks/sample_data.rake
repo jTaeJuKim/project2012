@@ -27,6 +27,7 @@ namespace :db do
   task populate: :environment do
     song = Song.create!(title: "God is able",
                         artist: "Hillsong Live",
+                        key: "G",
                         lyrics: 
 "       B
 God is able
