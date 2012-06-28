@@ -1,6 +1,14 @@
 <% provide(:title, 'Browse Library') %>
 <h1>All songs</h1>
-<p>Note that the search function is still under construction</p>
+<p>Note that the search function is still under construction.</p>
+<%= form_tag songs_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil, class: "btn btn-large btn-primary" %>
+  </p>
+<% end %>
+
+<!--What I hope the form will look like later on
 
 <form class="well form-search">  
   <input type="text" class="input-large search-query span10 offset1">  
@@ -14,7 +22,8 @@
       </select> 
     </div>
   </div>    
-</form>  
+</form>
+-->  
 <table class="table table-striped table-bordered">
   <thead>
     <tr>

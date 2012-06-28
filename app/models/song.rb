@@ -6,6 +6,16 @@ class Song < ActiveRecord::Base
   validates :artist, presence: true
   validates :lyrics, presence: true
   validates :key, presence: true
+
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
 end
 # == Schema Information
 #
