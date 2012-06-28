@@ -16,7 +16,7 @@ namespace :db do
       phone: "01224111111",
       password: "foobar",
       password_confirmation: "foobar")
-    admin.toggle!(:admin)
+    supervisor.toggle!(:admin)
 
 
     18.times do |n|
