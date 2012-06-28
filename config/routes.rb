@@ -1,5 +1,7 @@
 Proj::Application.routes.draw do
 
+  get "roles/new"
+
   get "songs/new"
 
   resources :users

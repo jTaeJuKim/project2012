@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :surname, :phone, :password, :password_confirmation
   has_secure_password
 
+  has_many :assignments
+  has_many :roles, through: :assignments
+
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 

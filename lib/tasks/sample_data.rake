@@ -1,4 +1,5 @@
 namespace :db do
+
   desc "Fill database with sample data"
   task populate: :environment do
     admin = User.create!(name: "Tae Ju",
@@ -104,4 +105,19 @@ He will never fail us
                E
 He will never fail us")
   end
+
+  desc "Fill database with roles data"
+  task populate: :environment do
+    roles = ["Leader", "Acoustic", "Electric", "Piano",
+     "Bass", "Drums", "Sax", "Violin",
+      "Vox1", "Vox2", "Vox3", "AM Sound", "PM Sound"]
+
+      13.times do |n|
+        bandRoles = roles[n-1]
+        Role.create!(description: bandRoles)
+      end
+  end
+
+
 end
+
