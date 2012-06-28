@@ -9,6 +9,14 @@ namespace :db do
                  password_confirmation: "foobar")
     admin.toggle!(:admin)
 
+    supervisor = User.create!(name: "Robin",
+      surname:"Boswell",
+      email: "r.boswell@rgu.ac.uk",
+      phone: "01224111111",
+      password: "foobar",
+      password_confirmation: "foobar")
+    admin.toggle!(:admin)
+
 
     18.times do |n|
 

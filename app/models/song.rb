@@ -7,11 +7,12 @@ class Song < ActiveRecord::Base
   validates :lyrics, presence: true
   validates :key, presence: true
 
-
+#method for searching by title
   def self.search(search)
     if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+      find(:all, conditions: ['title LIKE ?', "%#{search}%"])
     else
+      #if nothing is inputed then just show all songs
       find(:all)
     end
   end
