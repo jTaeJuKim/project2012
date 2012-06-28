@@ -27,8 +27,8 @@ namespace :db do
       last =["Gordon", "Donaldson", "Dargie", "McAllister", "Hutchison",
       "Kim", "Rowe", "West", "Robertson", "Alder",
       "Kerr", "Duncan", "Harris", "West", "Boswell", "Fox-Davies", "Dhillon", "Clews"]
-      name  = first[n-1] #Faker::Name.name replace faker with relevant sample
-      surname = last[n-1] #"Schmidt"
+      name  = first[n] #Faker::Name.name replace faker with relevant sample
+      surname = last[n] #"Schmidt"
       email = "example-#{n+1}@tkcc.org"
       password  = "password"
       phone= "01330999877"
@@ -113,7 +113,7 @@ He will never fail us")
       "Vox1", "Vox2", "Vox3", "AM Sound", "PM Sound"]
 
       13.times do |n|
-        bandRoles = roles[n-1]
+        bandRoles = roles[n]
         Role.create!(description: bandRoles)
       end
   end
