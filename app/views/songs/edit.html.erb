@@ -16,7 +16,9 @@
 
       <%= f.label :key, "Root Key" %>
       <%= f.select :key, options_for_select([' ','A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#']) %>
+      <%= link_to "Cancel", songs_path, class: "btn btn-large btn-danger" %>
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
+
   </div>
 </div>
