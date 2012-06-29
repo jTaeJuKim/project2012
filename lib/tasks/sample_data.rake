@@ -44,7 +44,7 @@ namespace :db do
   desc "Fill database with song data"
   task populate: :environment do
 
-    10.times do |n|
+    11.times do |n|
       titles=["God is Able", "Holding Nothing Back", "Who is this Love Amazing",
         "Holy is the Lord", "You Alone Can Rescue", "Mighty to Save", "You Deserve", "Go", 
         "How Awesome is the Lord Most High", "Great and Greatly to be Praised", "Happy Day"]
