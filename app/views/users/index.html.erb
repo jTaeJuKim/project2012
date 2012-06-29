@@ -2,6 +2,16 @@
 <h1>All users</h1>
 <h3>This page will include functions for editing and deleting users, as well as adding roles to users</h3>
 
-<ul class="users">
-    	<%= render @users %>
-</ul>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Click to delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @users %>
+  </tbody>
+</table>

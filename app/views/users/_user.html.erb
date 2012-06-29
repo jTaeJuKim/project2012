@@ -1,7 +1,11 @@
-<li>
-  <%= link_to user.name + " " + user.surname, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
-</li>
+<tr>
+	<td><%= link_to user.name + " " + user.surname, user %></td>
+	<td><%= user.email %></td>
+	<td><%= user.phone %></td>
+	<% if current_user.admin? && !current_user?(user) %>
+	<td><%= link_to "DELETE", user, method: :delete,
+	                                data: { confirm: 
+	                                	"Are you sure you want
+	                                	 to delete this user?" }%></td>
+	                                	 <% end %>
+</tr>

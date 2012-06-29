@@ -27,8 +27,8 @@ namespace :db do
       last =["Gordon", "Donaldson", "Dargie", "McAllister", "Hutchison",
       "Kim", "Rowe", "West", "Robertson", "Alder",
       "Kerr", "Duncan", "Harris", "West", "Boswell", "Fox-Davies", "Dhillon", "Clews"]
-      name  = first[n] #Faker::Name.name replace faker with relevant sample
-      surname = last[n] #"Schmidt"
+      name  = first[n] 
+      surname = last[n] 
       email = "example-#{n+1}@tkcc.org"
       password  = "password"
       phone= "01330999877"
