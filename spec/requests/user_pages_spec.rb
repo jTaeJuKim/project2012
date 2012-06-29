@@ -20,13 +20,13 @@ describe "UserPages" do
 
     it "should list each user" do
       User.all.each do |user|
-        page.should have_selector('li', text: user.name)
+        page.should have_selector('td', text: user.name)
       end
     end
 
     describe "delete links" do
 
-      it { should_not have_link('delete') }
+      it { should_not have_link('Delete') }
 
       describe "as an admin user" do
         let(:admin) { FactoryGirl.create(:admin) }
@@ -35,11 +35,11 @@ describe "UserPages" do
           visit users_path
         end
 
-        it { should have_link('delete', href: user_path(User.first)) }
+        it { should have_link('Delete', href: user_path(User.first)) }
         it "should be able to delete another user" do
-          expect { click_link('delete') }.to change(User, :count).by(-1)
+          expect { click_link('Delete') }.to change(User, :count).by(-1)
           end
-        it { should_not have_link('delete', href: user_path(admin)) }
+        it { should_not have_link('Delete', href: user_path(admin)) }
       end
     end
   end

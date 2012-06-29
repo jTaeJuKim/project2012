@@ -1,0 +1,8 @@
+<tr>
+	<td><%= role.description %></td>
+	<td><%= link_to "EDIT", '#' %></td>
+	<td><%= link_to "Delete", role, method: :delete,
+	                                data: { confirm: 
+	                                	"Are you sure you want
+	                                	 to delete this role?" }%></td>
+</tr>

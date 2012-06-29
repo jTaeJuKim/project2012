@@ -6,6 +6,12 @@ class SongsController < ApplicationController
   	@song = Song.new
   end
 
+  def destroy
+    Song.find(params[:id]).destroy
+    flash[:success] = "Song deleted."
+    redirect_to songs_path
+  end
+
   def edit
     @song = Song.find(params[:id])
   end

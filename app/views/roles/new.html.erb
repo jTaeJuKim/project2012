@@ -1,2 +1,13 @@
 <h1>Roles#new</h1>
-<p>Find me in app/views/roles/new.html.erb</p>
+<div class="row">
+   <div class="span6 offset3">
+      <%=form_for(@role) do|f|%>
+         <%= render 'shared/role_error_messages' %>
+
+         <%=f.label :description, "Describe the role below" %>
+         <%=f.text_field :description%>
+         
+         <%=f.submit "Create Role", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+</div>
