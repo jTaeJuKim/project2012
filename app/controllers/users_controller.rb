@@ -12,6 +12,14 @@ class UsersController < ApplicationController
     @users = User.all(order: 'name')
   end
 
+  #method for populating select box in assignments
+  def populate
+    @users = User.all
+    @users.each do |n|
+      n.name + " " + n.surname
+    end
+  end
+
   def create
   	@user = User.new(params[:user])
   	if @user.save

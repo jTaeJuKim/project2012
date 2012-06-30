@@ -1,0 +1,18 @@
+<h1>Add assignments to users</h1>
+
+<div class="row">
+   <div class="span6 offset3">
+      <%=form_for(@assignment) do|f|%>
+
+         <%=f.label :user_id, "Band Member" %>
+         <!--=f.select :user_id, options_for_select([select("assignment", "user_id", User.all.collect {|u| [ [u.name,u.surname].join(" "), u.id ] }, { :include_blank => true })])-->
+
+         <%=f.select :user_id, options_for_select(User.all.collect {|u| [ [u.name,u.surname].join(" "), u.id ] }, { :include_blank => true }) %>
+
+         <%=f.label :role_id, "Role" %>
+         <%=f.select :role_id, options_for_select(Role.all.collect {|r| [ r.description, r.id ] }, { :include_blank => true }) %>
+
+         <%=f.submit "Assign role", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+</div>
