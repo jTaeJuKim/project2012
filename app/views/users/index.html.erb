@@ -9,7 +9,6 @@
       <th>Email</th>
       <th>Phone</th>
       <th>Roles</th>
-      <th>Click to manage roles</th>
       <th>Click to delete</th>
     </tr>
   </thead>
@@ -17,3 +16,5 @@
     <%= render @users %>
   </tbody>
 </table>
+
+<%= link_to "Add Band Member", new_user_path, class: "btn btn-large btn-primary" %>
