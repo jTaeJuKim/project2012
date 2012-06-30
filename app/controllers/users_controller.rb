@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :signed_in_user, only: [:edit, :update, :index, :destroy]
+  #before_filter :signed_in_user, only: [:edit, :update, :index, :destroy]
   before_filter :correct_user, only: [:edit, :update]
   before_filter :admin_user, only: [:destroy]
 
@@ -50,13 +50,6 @@ class UsersController < ApplicationController
   end
 
   private
-  #if user isn't signed in this will redirect them to do so
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_path, notice: "No unauthorized access. Please sign in."
-      end
-    end
 
     def correct_user
       @user = User.find(params[:id])
