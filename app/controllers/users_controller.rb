@@ -18,9 +18,9 @@ class UsersController < ApplicationController
   	if @user.save
   		#successful save
       #user automatically signed in
-      # sign_in @user
+      sign_in @user
       #send an email to the user
-      #UserMailer.welcome_mail(@user).deliver
+      UserMailer.welcome_email(@user).deliver
   		flash[:success] = "Congratulations, you've created your band app account!"
   		redirect_to root_path
   	else
