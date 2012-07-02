@@ -41,6 +41,7 @@ namespace :db do
     end
   end #end user script
 
+
   desc "Fill database with song data"
   task populate: :environment do
 
@@ -76,6 +77,33 @@ namespace :db do
       end
   end #end role script
 
+  desc "Fill database with role assignments"
+  task populate: :environment do
 
+        first = ["Jo", "Gareth", "Graham", "Barry", "Fran",
+      "Justin", "Helen", "Rachael", "Michael", "Graham",
+      "Chloe", "Tony", "Leon", "Andy", "Gareth", "Lily", "Lal", "Dan"]
+
+      users = [3, 3, 4, 4, 4,
+       5, 5, 6, 6, 7,
+       7, 8, 8, 9, 10,
+       10, 11, 12, 13, 14,
+       15, 15, 15, 16, 16,
+       17, 18, 18, 19, 19,
+       20, 20]
+      roles = [1, 2, 1, 3, 5,
+       1, 2, 1, 4, 1,
+       8, 3, 5, 4, 4,
+       5, 6, 6, 7, 7,
+       6, 12, 13, 2, 5,
+       5, 12, 13, 12, 13,
+       12, 13]
+
+       32.times do |r|
+        u_id = users[r]
+        r_id = roles[r]
+        Assignment.create!(user_id: u_id, role_id: r_id)
+       end
+  end #end role assignment
 end
 
