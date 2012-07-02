@@ -1,42 +1,7 @@
 <!DOCTYPE html>
 <div class="center hero unit">
 	<% if signed_in? %>
-	<table class = "table table-striped">
-		<thead>
-			<tr>
-				<th>DATE</th>
-				<th>LEADER</th>
-				<th>ACOUSTIC</th>
-				<th>ELECTRIC</th>
-				<th>PIANO</th>
-				<th>BASS</th>
-				<th>DRUMS</th>
-				<th>SAX</th>
-				<th>VIOLIN</th>
-				<th>SINGERS</th>
-				<th>AM SOUND</th>
-				<th>PM SOUND</th>
-			</tr>
-	    </thead>
-	    <tbody>
-	    	<% 12.times do %>
-	    	<tr>
-	    		<td>01-July-2012</td>
-	    		<td>Jo Gordon</td>
-	    		<td>Graham Dargie</td>
-	    		<td>Gareth Donaldson</td>
-	    		<td>Rachael West</td>
-	    		<td>Justin Kim</td>
-	    		<td>Michael Robertson</td>
-	    		<td>Tony Duncan</td>
-	    		<td>Fran Hutchison</td>
-	    		<td>Team 1</td>
-	    		<td>Lily Fox-Davies</td>
-	    		<td>Dan Clews</td>
-	    	</tr>
-	    	<% end %>
-	    </tbody>
-	</table>
+
 	<%else%>
 	  <p><%= link_to image_tag("WIP.jpg", alt: "Work in Progress", width: "550px", height: "auto", id: "WIP"), 'http://doctorcatmd.com/2011-01-10/doctor-cat' %></p>
 	<%end%>

@@ -1,0 +1,51 @@
+<h3>Plan a service</h3>
+<div class="row">
+   <div class="span6 offset2">
+      <%=form_for(@service) do|f|%>
+
+         <%=f.label :date, "Date" %>
+         <span><%=f.date_select :date %></span>
+
+         <%=f.label :leader, "Leader" %>
+         <%=f.select :leader, options_for_select( User.includes(:roles).where(
+         	:roles => {:description => "Leader"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :acoustic, "Acoustic" %>
+         <%=f.select :acoustic, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "Acoustic"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :electric, "Electric" %>
+         <%=f.select :electric, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "Electric"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :piano, "Piano" %>
+         <%=f.select :piano, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "Piano"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :bass, "Bass" %>
+         <%=f.select :bass, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "Bass"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :drums, "Drums" %>
+         <%=f.select :drums, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "Drums"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :sax, "Sax" %>
+         <%=f.select :sax, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "Sax"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :violin, "Violin" %>
+         <%=f.select :violin, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "Violin"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :singers, "Singers" %>
+         <%=f.select :singers, options_for_select(["Vox 1", "Vox 2", "Vox 3"]) %>
+         <%=f.label :soundAM, "AM Sound" %>
+         <%=f.select :soundAM, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "AM Sound"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+         <%=f.label :soundPM, "PM Sound" %>
+         <%=f.select :soundPM, options_for_select(User.includes(:roles).where(
+         	:roles => {:description => "PM Sound"}).collect{|u|[[u.name,u.surname].join(" ")]}) %>
+
+
+
+
+    
+
+         <%=f.submit "Add to Rota", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+</div>
+

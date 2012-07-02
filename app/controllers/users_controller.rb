@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       #user automatically signed in
       sign_in @user
   		flash[:success] = "Congratulations, you've created your band app account!"
-  		redirect_to @user
+  		redirect_to root_path
   	else
   		render 'new'
   	end

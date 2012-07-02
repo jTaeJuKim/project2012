@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628163219) do
+ActiveRecord::Schema.define(:version => 20120702103547) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "role_id"
@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(:version => 20120628163219) do
   end
 
   add_index "roles", ["description"], :name => "index_roles_on_description", :unique => true
+
+  create_table "services", :force => true do |t|
+    t.date     "date"
+    t.string   "leader"
+    t.string   "acoustic"
+    t.string   "electric"
+    t.string   "piano"
+    t.string   "bass"
+    t.string   "drums"
+    t.string   "sax"
+    t.string   "violin"
+    t.string   "singers"
+    t.string   "soundAM"
+    t.string   "soundPM"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "songs", :force => true do |t|
     t.string   "title"

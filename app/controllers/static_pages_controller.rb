@@ -14,4 +14,5 @@ class StaticPagesController < ApplicationController
 
   def people
   end
+
 end

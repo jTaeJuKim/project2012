@@ -1,4 +1,6 @@
 @import "bootstrap";
+  
+
 /* Home page table */
 table{
   position: center;
@@ -93,6 +95,15 @@ input, textarea, select, .uneditable-input {
   height: auto;
   margin-bottom: 15px;
   @include box_sizing;
+}
+
+label{
+  font-weight: bold;
+}
+
+/*date select*/
+span select{
+  width: 90px;
 }
 
 #error_explanation {

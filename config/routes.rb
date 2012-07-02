@@ -1,5 +1,7 @@
 Proj::Application.routes.draw do
 
+  get "services/new"
+
   get "assignments/new"
 
   get "roles/new"
@@ -11,8 +13,11 @@ Proj::Application.routes.draw do
   resources :songs
   resources :roles
   resources :assignments
+  resources :services
+  
+  root to: 'services#index'
 
-  root to: 'static_pages#home'
+  #root to: 'static_pages#home'
 
   match '/planning', to: 'static_pages#planning'
   match '/scheduling', to: 'static_pages#scheduling'

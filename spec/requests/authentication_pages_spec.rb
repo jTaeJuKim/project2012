@@ -20,7 +20,7 @@ describe "Authentication" do
       #for code for sign in see spec/support/utilities.rb
   		before{ sign_in user }
 
-  		it{ should have_selector('title', text: user.name) }
+  		it{ should have_selector('title', text: 'TKCC BAND APP') }
   		it{ should have_link('SIGN OUT', href: signout_path) }
       it{ should have_link('PROFILE', href: user_path(user)) }
       it{ should have_link('SETTINGS', href: edit_user_path(user)) }
