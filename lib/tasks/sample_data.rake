@@ -18,15 +18,6 @@ namespace :db do
       password_confirmation: "foobar")
     supervisor.toggle!(:admin)
 
-    tester = User.create!(name: "Jo",
-      surname: "Gordon",
-      email: "j.gordon@test.com",
-      phone: "01224111111",
-      password: "testing",
-      password_confirmation: "testing")
-    tester.toggle!(:admin)
-
-
     18.times do |n|
 
       first = ["Jo", "Gareth", "Graham", "Barry", "Fran",
@@ -47,6 +38,15 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+
+    tester = User.create!(name: "Jo",
+      surname: "Gordon",
+      email: "j.gordon@test.com",
+      phone: "01224111111",
+      password: "testing",
+      password_confirmation: "testing")
+    tester.toggle!(:admin)
+
   end #end user script
 
 
