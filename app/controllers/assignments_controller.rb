@@ -3,6 +3,12 @@ class AssignmentsController < ApplicationController
   	@assignment = Assignment.new
   end
 
+  def destroy
+  end
+
+  def index
+    @assignments = Assignment.all
+  end
 
   def create
   	@assignment = Assignment.new(params[:assignment])

@@ -1,10 +1,11 @@
-<h3>Plan a service</h3>
+<%provide(:title, "Edit service")%>
+
 <div class="row">
    <div class="span6 offset2">
       <%=form_for(@service) do|f|%>
 
          <%=f.label :date, "Date" %>
-         <span><%=f.date_select :date, start_year: Time.now.year %></span>
+         <span><%=f.date_select :date %></span>
 
          <%=f.label :leader, "Leader" %>
          <%=f.select :leader, options_for_select( User.includes(:roles).where(
@@ -40,8 +41,8 @@
          	:roles => {:description => "PM Sound"}).collect{|u|[[u.name,u.surname].join(" ")]}), :prompt => 'None Assigned' %>
 
 
-         <%=f.submit "Add to Rota", class: "btn btn-large btn-primary" %>
+         <%=f.submit "Save", class: "btn btn-large btn-primary" %>
       <% end %>
+
     </div>
 </div>
-

@@ -1,0 +1,12 @@
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Band Member</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @assignments %>
+  </tbody>
+</table>
+<%= link_to "Add more roles", new_role_path, class: "btn btn-large btn-primary" %>

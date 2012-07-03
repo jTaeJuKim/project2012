@@ -1,14 +1,83 @@
+<% if(service.date < Date.today) %>
+  <% service.destroy %>
+<% end %>
 <tr>
-	<td><%=link_to service.date, '#' %></td>
+	<td><%=link_to service.date, edit_service_path(service.id) %></td>
 	<td><%= service.leader %></td>
-	<td><%= service.acoustic %></td>
-	<td><%= service.electric %></td>
-	<td><%= service.piano %></td>
-	<td><%= service.bass %></td>
-	<td><%= service.drums %></td>
-	<td><%= service.sax %></td>
-	<td><%= service.violin %></td>
-	<td><%= service.singers %></td>
-	<td><%= service.soundAM %></td>
-	<td><%= service.soundPM %></td>
+
+	<td>
+		<% if(service.acoustic.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.acoustic %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.electric.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.electric %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.piano.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.piano %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.bass.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.bass %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.drums.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.drums %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.sax.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.sax %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.violin.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.violin %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.singers.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.singers %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.soundAM.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.soundAM %>
+		<% end %>
+	</td>
+	<td>
+		<% if(service.soundPM.empty?) %>
+		  <%= "N/A" %>
+		<% else %>
+		  <%= service.soundPM %>
+		<% end %>
+	</td>
+	<td>
+		<%= link_to "Delete", service, method: :delete,
+	                                data: { confirm: 
+	                                	"Are you sure you want to delete?" }%>
+	</td>
 </tr>

@@ -2,7 +2,9 @@ class Service < ActiveRecord::Base
   attr_accessible :soundAM, :soundPM, :acoustic, :bass, 
   :date, :drums, :electric, :leader, :piano, :sax, :singers, :violin
 
-  validates :date, uniqueness: true
+  validates :date, presence: true
+
+  validates :leader, presence: true
   
 
 end

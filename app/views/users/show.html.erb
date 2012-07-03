@@ -1,7 +1,9 @@
 <% if signed_in? %>
   <title><% provide(:title, @user.name)%></title>
-  <h1>Profile for <%=@user.name + " " + @user.surname%></h1>
-  <h1>Email: <%=@user.email%><br/>Phone: <%=@user.phone%></h1>
+  <h3>Profile for <%=@user.name + " " + @user.surname%></h3>
+  <h3>Email: <%=@user.email%><br/>Phone: <%=@user.phone%></h3>
+  <h3>Roles: <%= @user.roles.select("description").map(&:description).join(", ") %></h3>
+
 <%else%>
   <h1>Please <%=link_to "sign in", signin_path%> to view this page</h1>
 <%end%>
