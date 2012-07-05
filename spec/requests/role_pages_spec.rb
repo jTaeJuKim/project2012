@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+##because roles are NOT created/manipulated directly by any user extensive tests on views not required
 
 describe "Role pages" do
   

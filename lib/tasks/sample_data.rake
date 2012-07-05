@@ -88,10 +88,6 @@ namespace :db do
   desc "Fill database with role assignments"
   task populate: :environment do
 
-        first = ["Jo", "Gareth", "Graham", "Barry", "Fran",
-      "Justin", "Helen", "Rachael", "Michael", "Graham",
-      "Chloe", "Tony", "Leon", "Andy", "Gareth", "Lily", "Lal", "Dan"]
-
       users = [3, 3, 4, 4, 4,
        5, 5, 6, 6, 7,
        7, 8, 8, 9, 10,
@@ -113,5 +109,29 @@ namespace :db do
         Assignment.create!(user_id: u_id, role_id: r_id)
        end
   end #end role assignment
+
+  desc "Fill database with services"
+  task populate: :environment do
+
+    sampleDate = Date.today
+
+    12.times do |n|
+      Service.create!(date: sampleDate + (n*7),
+        leader: "Jo",
+        acoustic: "Jo",
+        electric: "Gareth",
+        piano: "Rachael",
+        bass: "Justin",
+        drums: "Michael",
+        sax: "Tony",
+        violin: "Fran",
+        singers: "Vox 1",
+        soundAM: "Dan",
+        soundPM: "Lily")
+    end
+
+  end #end service data
+
+
 end
 

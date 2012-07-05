@@ -21,4 +21,19 @@ FactoryGirl.define do
             For the joy of the Lord is our strength"
     key "G"
   end
+
+  factory :service do
+    date Date.today
+    leader "Graham"
+    acoustic "Graham"
+    electric "Justin"
+    piano "Helen"
+    bass "Andy"
+    sax "Chloe"
+    violin "Fran"
+    singers "Vox 3"
+    soundAM "Leon"
+    soundPM "Lal"
+  end
+  
 end
