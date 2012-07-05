@@ -1,4 +1,5 @@
 <tr>
-	<td><strong><%= "Name here" %></strong></td>
-	<td><strong><%= "Role here" %></strong></td>
+	<td><%= assignment.user.name + " " + assignment.user.surname%></td>
+	<td><%= assignment.role.description %></td>
+	<td><%= link_to "Remove role", assignment, method: :delete %></td>
 </tr>

@@ -4,6 +4,9 @@ class AssignmentsController < ApplicationController
   end
 
   def destroy
+    Assignment.find(params[:id]).destroy
+    flash[:success] = "Role removed."
+    redirect_to assignments_path
   end
 
   def index

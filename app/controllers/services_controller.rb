@@ -20,7 +20,7 @@ class ServicesController < ApplicationController
   end
 
   def index
-  	@services = Service.all
+  	@services = Service.all(order: 'date')
   end
 
   def edit

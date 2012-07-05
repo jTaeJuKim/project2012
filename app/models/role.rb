@@ -2,7 +2,7 @@ class Role < ActiveRecord::Base
   attr_accessible :description
 
   has_many :assignments
-  has_many :users, through: :assignments
+  has_many :users, through: :assignments, order:'users.name'
 
   validates :description, presence: true, uniqueness: true
 

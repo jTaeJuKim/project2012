@@ -21,6 +21,18 @@ describe Service do
   it{ should respond_to(:soundAM) }
   it{ should respond_to(:soundPM) }
 
+  it{ should be_valid } 
+
+  describe "when date is not present" do
+    before{ @service.date = " " }
+    it{ should_not be_valid }
+  end
+
+  describe "when leader is not present" do
+    before{ @service.leader = " " }
+    it{ should_not be_valid }
+  end
+
 end
 # == Schema Information
 #
