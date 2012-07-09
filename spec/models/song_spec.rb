@@ -10,6 +10,8 @@ describe Song do
   it{ should respond_to(:artist) }
   it{ should respond_to(:lyrics) }
   it{ should respond_to(:key) }
+  it{ should respond_to(:allocations)}
+  it{ should respond_to(:setlists)}
 
   describe "when title is blank" do
   	before{ @song.title = "" }

@@ -35,5 +35,10 @@ FactoryGirl.define do
     soundAM "Leon"
     soundPM "Lal"
   end
+
+  factory :setlist do
+    date Date.today
+    morning true
+  end
   
 end

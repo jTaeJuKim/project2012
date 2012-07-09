@@ -10,7 +10,9 @@ describe "Assignment pages" do
       phone:"01224555555", password: "foobar", password_confirmation: "foobar")
       @roleFirst = Role.create(description: "Tester")
       @roleSecond = Role.create(description: "Role Two")
-      @assignment = Assignment.create(user_id: 1, role_id: 1)
+      @assignment = Assignment.create(user_id: @user.id, role_id: @roleSecond.id)
+      #NOTE when you create a user in the test database the id is not automatically 1
+
       sign_in(@user)
     end #sign in user to access the subject pages
 
@@ -38,14 +40,10 @@ describe "Assignment pages" do
 
 	describe "Deleting an assignment" do
 
-		#@assignment = Assignment.create(user_id: 1, role_id: 2)
+		before{ visit assignments_path }
 
-		#before{ visit assignments_path }
+		it{ should have_link("Remove role") }
 
-		#it{ should have_selector('title', text: "TKCC BAND APP")}
-
-		#This test is failing but due to a test database issue rather than an application issue
-		#I have since tested this in the application and through the console and found it to be working perfectly
-	end
+	end #end delete tests
 
 end

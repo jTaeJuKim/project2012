@@ -1,6 +1,9 @@
 class Song < ActiveRecord::Base
   attr_accessible :artist, :lyrics, :title, :key
 
+  has_many :allocations, dependent: :destroy  #if song destroyed then remove from set lists 
+  has_many :setlists, through: :allocations
+
   #title, artist, and lyrics fields cannot be blank
   validates :title, presence: true
   validates :artist, presence: true

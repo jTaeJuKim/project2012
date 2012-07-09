@@ -1,0 +1,18 @@
+<h1>Create a setlist</h1>
+
+<div class="row">
+   <div class="span6 offset3">
+      <%=form_for(@setlist) do|f|%>
+ 
+         <%=f.label :date, "Set a date" %>
+         <span><%=f.date_select :date%><span>
+
+         <%=f.label :morning, "Morning" %>
+         <%=f.radio_button :morning, true %>
+         <%=f.label :morning, "Evening" %>
+         <%=f.radio_button :morning, false %>
+         
+         <%=f.submit "Create Setlist", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+</div>

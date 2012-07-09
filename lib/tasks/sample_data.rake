@@ -117,17 +117,17 @@ namespace :db do
 
     12.times do |n|
       Service.create!(date: sampleDate + (n*7),
-        leader: "Jo",
-        acoustic: "Jo",
-        electric: "Gareth",
-        piano: "Rachael",
-        bass: "Justin",
-        drums: "Michael",
-        sax: "Tony",
-        violin: "Fran",
+        leader: "Jo Gordon",
+        acoustic: "Jo Gordon",
+        electric: "Gareth Donaldson",
+        piano: "Rachael West",
+        bass: "Justin Kim",
+        drums: "Michael Robertson",
+        sax: "Tony Duncan",
+        violin: "Fran Hutchison",
         singers: "Vox 1",
-        soundAM: "Dan",
-        soundPM: "Lily")
+        soundAM: "Dan Clews",
+        soundPM: "Lily Fox-Davies")
     end
 
   end #end service data

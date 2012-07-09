@@ -20,7 +20,7 @@ class RolesController < ApplicationController
 
   def destroy
     Role.find(params[:id]).destroy
-    flash[:success] = "Song deleted."
+    flash[:success] = "Role deleted."
     redirect_to roles_path
   end
 

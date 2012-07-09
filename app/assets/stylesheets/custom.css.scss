@@ -7,7 +7,7 @@ table{
 }
 
 table#roleIndex{
-  width: 50%
+  width: 80%;
 }
 
 /* apply universally to website */
@@ -55,7 +55,7 @@ textarea {
 
 footer {
   margin-top: 45px;
-  padding-top: 5px;
+  padding-top: 3px;
   border-top: 1px solid #eaeaea;
   color: #999;
 }
@@ -87,10 +87,12 @@ footer {
   width: 65%;
 }
 
-.btn{
+.btn-primary{
   float: right;
   margin: 3px;
 }
+
+
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -139,6 +141,33 @@ span select{
       border-bottom: 2px solid #FFFF00;
     }
   }
+}
+
+/*wireframes for set list*/
+
+div#workArea{
+  border: 2px solid;
+  overflow-y: scroll;
+  max-height: 370px;
+}
+
+div#library{
+  overflow-y: scroll;
+  max-height: 370px;
+}
+
+div#recommendation{
+  border: 2px solid;
+  overflow-y: scroll;
+  max-height: 370px;
+}
+
+div#songSelection{
+  overflow-y: scroll;
+  max-height: 200px;
+}
+
+div#currentSet{
 }
 
 

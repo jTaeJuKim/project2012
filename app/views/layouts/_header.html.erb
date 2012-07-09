@@ -15,9 +15,11 @@
                   PLANNING <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "BROWSE SET LISTS", '#' %></li>
-                  <li><%= link_to "CREATE SET LIST", '#' %></li>
-                  <li><%= link_to "EDIT SET LIST", '#' %></li>
+                  <li><%= link_to "BROWSE SET LISTS", setlists_path %></li>
+                  <li><%= link_to "BROWSE ALLOCATIONS", allocations_path %></li>
+                  <li><%= link_to "CREATE SET LIST", new_setlist_path %></li>
+                  <li><%= link_to "ALLOCATE", new_allocation_path %></li>
+
                 </ul>
               </li>
 
@@ -29,7 +31,6 @@
                   SCHEDULING <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to "EDIT ROTA", '#' %></li>
                   <li><%= link_to "NEW SERVICE", new_service_path %></li>
                 </ul>
               </li>

@@ -1,5 +1,11 @@
 Proj::Application.routes.draw do
 
+  get "allocations/new"
+
+  get "setlists/new"
+
+  get "allocation/new"
+
   get "services/new"
 
   get "assignments/new"
@@ -14,6 +20,8 @@ Proj::Application.routes.draw do
   resources :roles
   resources :assignments
   resources :services
+  resources :setlists
+  resources :allocations
   
   root to: 'services#index'
 
