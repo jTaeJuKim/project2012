@@ -19,6 +19,7 @@ class SetlistsController < ApplicationController
   def edit
     @songs = Song.all
     @setlist = Setlist.find(params[:id])
+    @currentSet = @setlist.songs.collect{|s| [s.title, s.artist, s.key] }
   end
 
   def update

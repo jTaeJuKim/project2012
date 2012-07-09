@@ -27,8 +27,6 @@
 	  	      </thead>
 	  	      <tbody>
 	  	      	
-	  	      	<% @currentSet = @setlist.songs.collect{|s| [s.title, s.artist, s.key] } %> 
-	  	      	
 	  	      	<% if(@currentSet.empty?) %>
 	  	      	  <tr><td>NO SONGS</td></tr>
 	  	      	<% else %>
