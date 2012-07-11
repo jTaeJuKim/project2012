@@ -1,18 +1,5 @@
 Proj::Application.routes.draw do
 
-  get "allocations/new"
-
-  get "setlists/new"
-
-  get "allocation/new"
-
-  get "services/new"
-
-  get "assignments/new"
-
-  get "roles/new"
-
-  get "songs/new"
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
@@ -20,7 +7,10 @@ Proj::Application.routes.draw do
   resources :roles
   resources :assignments
   resources :services
-  resources :setlists
+
+  resources :setlists do
+    get :songs
+  end
   resources :allocations
   
   root to: 'services#index'

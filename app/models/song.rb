@@ -19,7 +19,7 @@ class Song < ActiveRecord::Base
       find(:all)
     end
   end
-
+  
 end
 # == Schema Information
 #

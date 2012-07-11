@@ -1,5 +1,5 @@
 <tr>
-	<td><strong><%= link_to setlist.date, edit_setlist_path(setlist) %></strong></td>
+	<td><%= link_to setlist.date, setlist_path(setlist) %></td>
 	<td>
 		<% if(setlist.morning == true) %>
 		  <%= "Morning Service" %>
@@ -9,5 +9,10 @@
 	</td>
 	<td><%= link_to "Delete", setlist, method: :delete,
 	                                data: { confirm: 
-	                                	"Are you sure you want to delete this set?" }%></td>
+	                                	"Are you sure you want to delete this set?" }%>
+	</td>
+	<td>
+		<%= link_to "Edit", edit_setlist_path(setlist) %>
+	</td>
+
 </tr>

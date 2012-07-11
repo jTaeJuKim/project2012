@@ -53,14 +53,18 @@ namespace :db do
   desc "Fill database with song data"
   task populate: :environment do
 
-    11.times do |n|
+    16.times do |n|
       titles=["God is Able", "Holding Nothing Back", "Who is this Love Amazing",
         "Holy is the Lord", "You Alone Can Rescue", "Mighty to Save", "You Deserve", "Go", 
-        "How Awesome is the Lord Most High", "Great and Greatly to be Praised", "Happy Day"]
+        "How Awesome is the Lord Most High", "Great and Greatly to be Praised", "Happy Day", 
+        "The Wonder of Your Love", "God of Generations", "Glorify Your Name", "God of the Redeemed", 
+        "The Stand", "This is Our God"]
       artists=["Hillsong Live", "Jesus Culture", "Chris McClarney", "Chris Tomlin",
         "Matt Redman", "Joel Houston", "Reuben Morgan", "Hillsong United", "Chris Tomlin", "Fee",
-        "Tim Hughes"]
-      keys=["B", "E", "C", "G", "Bb", "A", 'C#', "E", "E", "E", "A"]
+        "Tim Hughes", "Hillsong", "Simon Robertson", "Simon Robertson", "Jeremy Riddle", "Hillsong", 
+        "Hillsong"]
+      keys=["B", "E", "C", "G", "Bb", "A", 'C#', "E", "E", "E", "A", "G", "A", "A", "B", "A", "E"]
+
 
         Song.create!(title: titles[n],
           artist: artists[n],
@@ -131,6 +135,27 @@ namespace :db do
     end
 
   end #end service data
+
+  desc "Fill the database with setlists"
+  task populate: :environment do
+    sampleDate = Date.today
+    12.times do |n|
+      Setlist.create(date: sampleDate + (n*7),
+        morning: true)
+    end  
+  end#end setlist data
+
+  desc "Fill the database with allocations"
+  task populate: :environment do
+    sets = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    songs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ,14 ,15, 16]
+    12.times do |n|
+      Allocation.create!(setlist_id: sets[n], song_id: songs[n + 1])
+      Allocation.create!(setlist_id: sets[n], song_id: songs[n + 2])
+      Allocation.create!(setlist_id: sets[n], song_id: songs[n + 3])
+    end
+  end
+
 
 
 end

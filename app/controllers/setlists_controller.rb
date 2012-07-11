@@ -1,6 +1,8 @@
 class SetlistsController < ApplicationController
   def new
   	@setlist = Setlist.new
+    @songs = Song.all
+    @currentSet = @setlist.songs.select([:title, :artist, :key])
   end
 
   def create
@@ -16,18 +18,26 @@ class SetlistsController < ApplicationController
   	end
   end
 
-  def edit
-    @songs = Song.all
+  def show
     @setlist = Setlist.find(params[:id])
-    @currentSet = @setlist.songs.collect{|s| [s.title, s.artist, s.key] }
+    @setSongs = @setlist.songs
+  end
+
+  def edit
+    @songs = Song.all(order: 'title')
+    @setlist = Setlist.find(params[:id])
+    @allocations = @setlist.allocations
   end
 
   def update
+    #render :text => params.to_s and return
     @setlist = Setlist.find(params[:id])
+    #song = Song.find(params[song_id])
+    #@setlist.allocate!(song)
     if @setlist.update_attributes(params[:setlist])
       # Handle a successful update.
       flash[:success] = "SAVED!"
-      redirect_to setlists_path
+      redirect_to setlist_path(@setlist)
     else
       render 'edit'
     end
