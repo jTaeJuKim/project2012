@@ -2,7 +2,7 @@ class SetlistsController < ApplicationController
   def new
   	@setlist = Setlist.new
     @songs = Song.all
-    @currentSet = @setlist.songs.select([:title, :artist, :key])
+    @allocations = @setlist.allocations
   end
 
   def create
