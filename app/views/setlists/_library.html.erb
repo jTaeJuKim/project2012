@@ -1,2 +1,11 @@
+<div>
+  <%=nested_form_for @allocation do|builder|%>
+    <%=builder.label :song_id, "Pick a song" %>
 
-<h2> This time I'll use actual form elements NOT A TABLE </h2>
+     <%= builder.hidden_field :setlist_id, value: @setlist.id %>
+
+     <%= builder.select(:song_id, options_for_select(@selections), {}, html:{multiple: true, size: 7}) %>
+
+    <%=builder.submit "Add Song", class: "btn btn-large btn-primary" %>
+  <% end %>
+</div>

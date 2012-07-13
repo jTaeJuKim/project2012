@@ -14,13 +14,16 @@
          <h2>Library</h2>	
 
         <div>
-          <%= render 'library' %>
-
-          <%= render 'currentSet' %> 
-
+          <div id="library">
+            <%= render 'library' %>
+          </div>
+          <div>
+            <%= render 'currentSet' %>
+          </div> 
         </div>
          
          <%=f.submit "Save Setlist", class: "btn btn-large btn-primary" %>
+         <%=link_to "Cancel Changes", setlist_path(@setlist), class: "btn btn-large btn-danger" %> 
       <% end %>
 
 

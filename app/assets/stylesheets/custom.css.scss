@@ -87,9 +87,9 @@ footer {
   width: 65%;
 }
 
-.btn-primary{
+.btn{
   float: right;
-  margin: 3px;
+  margin: 2px;
 }
 
 
@@ -152,8 +152,10 @@ div#workArea{
 }
 
 div#library{
-  overflow-y: scroll;
-  max-height: 370px;
+
+  select{
+    width: 100%;
+  }
 }
 
 div#recommendation{

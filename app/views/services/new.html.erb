@@ -6,6 +6,8 @@
 
          <%=f.label :date, "Date" %>
          <span><%=f.date_select :date, start_year: Time.now.year %></span>
+         <!-- f.text_field :date, class: "datepicker" -->
+         
 
          <%=f.label :leader, "Leader" %>
          <%=f.select :leader, options_for_select( User.includes(:roles).where(

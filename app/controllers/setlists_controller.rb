@@ -27,18 +27,33 @@ class SetlistsController < ApplicationController
     @songs = Song.all(order: 'title')
     @setlist = Setlist.find(params[:id])
     @allocations = @setlist.allocations
+    @allocation = Allocation.new
+    @selections = Song.all.collect {|s| [ [s.title, s.artist].join(" by "), s.id ]   }
   end
 
   def update
-    #render :text => params.to_s and return
+    
     @setlist = Setlist.find(params[:id])
-    #song = Song.find(params[song_id])
-    #@setlist.allocate!(song)
+    @selections = Song.all.collect {|s| [ [s.title, s.artist].join(" by "), s.id] }
+    @allocations = @setlist.allocations
+    @allocation = Allocation.new
+
+    #params[:allocation][:song_id].reject! { |c| c.empty? }
+
+
+    @allocation.song_id = params[:allocation][:song_id].to_i
+    @allocation.setlist_id = @setlist.id
+
     if @setlist.update_attributes(params[:setlist])
-      # Handle a successful update.
-      flash[:success] = "SAVED!"
-      redirect_to setlist_path(@setlist)
+      if @allocation.save
+        flash[:success] = "SETLIST SAVED!"
+        redirect_to setlist_path(@setlist)
+      else
+        flash[:fail] = "Setlist not saved"
+        render 'edit'
+      end
     else
+      flash[:fail] = "FAIL!"
       render 'edit'
     end
   end
