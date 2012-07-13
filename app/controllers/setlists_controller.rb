@@ -39,7 +39,6 @@ class SetlistsController < ApplicationController
     @allocations = @setlist.allocations
     @allocation = Allocation.new
 
-
     @allocation.song_id = params[:allocation][:song_id]
     @allocation.setlist_id = @setlist.id
 

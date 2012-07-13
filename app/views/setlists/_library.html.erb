@@ -9,7 +9,7 @@
 
      <!-- builder.select(:song_id, options_from_collection_for_select(@songs, "id", "title", @allocation.song_id), {}, { :multiple => true, :size =>7 }) -->
 
-    <%=builder.submit "Add Song", class: "btn btn-large btn-primary" %>
+    <%=builder.submit "Add Song", class: "btn btn-large btn-primary", id: "addSongToSet" %>
   <% end %>
 </div>
 
