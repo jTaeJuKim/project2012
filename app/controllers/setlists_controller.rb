@@ -31,6 +31,7 @@ class SetlistsController < ApplicationController
     @selections = Song.all.collect {|s| [ [s.title, s.artist].join(" by "), s.id ]   }
   end
 
+
   def update
     
     @setlist = Setlist.find(params[:id])
@@ -38,16 +39,14 @@ class SetlistsController < ApplicationController
     @allocations = @setlist.allocations
     @allocation = Allocation.new
 
-    #params[:allocation][:song_id].reject! { |c| c.empty? }
 
-
-    @allocation.song_id = params[:allocation][:song_id].to_i
+    @allocation.song_id = params[:allocation][:song_id]
     @allocation.setlist_id = @setlist.id
 
     if @setlist.update_attributes(params[:setlist])
       if @allocation.save
         flash[:success] = "SETLIST SAVED!"
-        redirect_to setlist_path(@setlist)
+        redirect_to edit_setlist_path(@setlist)
       else
         flash[:fail] = "Setlist not saved"
         render 'edit'
