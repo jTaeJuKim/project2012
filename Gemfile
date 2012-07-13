@@ -47,6 +47,7 @@ end
 
 group :production do
 	gem 'pg', '0.12.2'
+  gem 'jquery-ui-rails' #jquery ui gem
 end
 
 # To use ActiveModel has_secure_password
