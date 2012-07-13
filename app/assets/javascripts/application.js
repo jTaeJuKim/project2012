@@ -16,6 +16,4 @@
 //= require bootstrap
 //= require_tree .
 
-$ ->
-  $('.datepicker').datepicker()
 
