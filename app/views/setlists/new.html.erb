@@ -11,12 +11,6 @@
          <%=f.radio_button :morning, true %>
          <%=f.label :morning, "Evening" %>
          <%=f.radio_button :morning, false %>
-
-         <h2>Library</h2>  
-
-         <div>
-            <%= render 'currentSet' %>
-         </div>
          
          <%=f.submit "Create Setlist", class: "btn btn-large btn-primary" %>
       <% end %>
