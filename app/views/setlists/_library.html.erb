@@ -1,7 +1,7 @@
 
 <div>
   <%=nested_form_for @allocation do|builder|%>
-    <%=builder.label :song_id, "Pick a song from the library" %>
+    <%=builder.label :song_id, "Songs" %>
 
      <%= builder.hidden_field :setlist_id, value: @setlist.id %>
 

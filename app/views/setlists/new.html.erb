@@ -1,5 +1,5 @@
 <h1>Create a setlist</h1>
-
+<%= render 'shared/setlist_error_messages' %>
 <div class="row">
    <div class="span8">
       <%=form_for(@setlist) do|f|%>
@@ -8,9 +8,9 @@
          <span><%=f.date_select :date%><span>
 
          <%=f.label :morning, "Morning" %>
-         <%=f.radio_button :morning, true %>
+         <%=f.radio_button :morning, true, id: "Morning" %>
          <%=f.label :morning, "Evening" %>
-         <%=f.radio_button :morning, false %>
+         <%=f.radio_button :morning, false, id: "Evening" %>
          
          <%=f.submit "Create Setlist", class: "btn btn-large btn-primary" %>
       <% end %>
