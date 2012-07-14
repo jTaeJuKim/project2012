@@ -15,7 +15,7 @@
 	   <tbody>
 	  	 <% @setSongs.each do |song| %>
 	  	    <tr>
-	  	      <td><%= song.title %></td>
+	  	      <td><%= link_to song.title, song_path(song)  %></td>
 	  	      <td><%= song.artist %></td>
 	  	      <td><%= song.key %></td>
 	  	    </tr>
@@ -26,5 +26,6 @@
    <% end %>
 </div>
 
-
+<% if current_user.admin? %>
 <%= link_to "EDIT", edit_setlist_path(@setlist), class: "btn btn-large btn-primary" %>
+<% end %>

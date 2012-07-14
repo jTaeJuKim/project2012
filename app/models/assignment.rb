@@ -7,6 +7,8 @@ class Assignment < ActiveRecord::Base
   validates :role_id, presence: true
   validates :user_id, presence: true
   validates_uniqueness_of :user_id, :scope => :role_id
+
+  
 end
 # == Schema Information
 #

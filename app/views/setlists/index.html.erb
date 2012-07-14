@@ -1,15 +1,21 @@
-<h1>List all setlists, have an edit link which leads to allocation path?</h1>
+<h2>SET LISTS</h2>
 
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>Date</th>
-      <th>Morning/Evening</th>	
-      <th>Edit</th>
+      <th>Morning/Evening</th>
+      <% if current_user.admin? %>	
+      <th>Add/Remove Songs</th>
       <th>Delete</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <%= render @setlists %>
   </tbody>
 </table>
+
+<% if current_user.admin? %>
+<%= link_to "Create another setlist", new_setlist_path, class: "btn btn-large btn-primary" %>
+<% end %>

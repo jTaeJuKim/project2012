@@ -6,4 +6,7 @@
 <h3>Lyrics: </h3>
 <!-- the pre tags here preserve the whitespace -->
 <p><pre><%= @song.lyrics %></pre></p> 
+
+<% if current_user.admin? %>
 <p><%= link_to "EDIT", edit_song_path, class: "btn btn-large btn-primary"%></p> 
+<%end %>

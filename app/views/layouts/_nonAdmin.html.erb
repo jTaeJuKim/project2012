@@ -1,0 +1,47 @@
+<li><%= link_to "HOME", root_path %></li>
+ <li id="fat-menu" class="dropdown">
+   <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+     PLANNING <b class="caret"></b>
+   </a>
+   <ul class="dropdown-menu">
+     <li><%= link_to "BROWSE SET LISTS", setlists_path %></li>
+   </ul>
+ </li>
+
+ <!--people_path -->
+
+ <li id="fat-menu" class="dropdown">
+   <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+     PEOPLE <b class="caret"></b>
+   </a>
+   <ul class="dropdown-menu">
+     <li><%= link_to "BAND MEMBERS", users_path %></li>
+   </ul>
+ </li>
+
+
+<!-- library_path -->
+
+ <li id="fat-menu" class="dropdown">
+   <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+     LIBRARY <b class="caret"></b>
+   </a>
+   <ul class="dropdown-menu">
+     <li><%= link_to "BROWSE LIBRARY", songs_path %></li>
+   </ul>
+ </li>
+
+
+<li id="fat-menu" class="dropdown">
+ <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+   ACCOUNT <b class="caret"></b>
+ </a>
+ <ul class="dropdown-menu">
+   <li><%= link_to "PROFILE", current_user %></li>
+   <li><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
+   <li class="divider"></li>
+   <li>
+     <%= link_to "SIGN OUT", signout_path, method: "delete" %>
+   </li>
+ </ul>
+</li>

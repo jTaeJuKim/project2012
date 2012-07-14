@@ -15,11 +15,15 @@
       <th>Singers</th>
       <th>AM Sound</th>
       <th>PM Sound</th>
+      <% if current_user.admin? %>
       <th>Delete</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
     <%= render @services %>
   </tbody>
 </table>
-<%= link_to "Plan Another Service", new_service_path, class: "btn btn-large btn-primary" %>
+<% if current_user.admin? %>
+   <%= link_to "Plan Another Service", new_service_path, class: "btn btn-large btn-primary" %>
+<% end %>

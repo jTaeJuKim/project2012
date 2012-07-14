@@ -11,6 +11,7 @@ class AssignmentsController < ApplicationController
 
   def index
     @assignments = Assignment.all
+    @assignments = @assignments.sort_by{ |assignment| assignment.user.name }
   end
 
   def create

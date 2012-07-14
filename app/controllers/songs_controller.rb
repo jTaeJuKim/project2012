@@ -27,8 +27,7 @@ class SongsController < ApplicationController
   end
 
   def index
-    @songs= Song.search(params[:search])
-    #@songs = Song.all(order: 'title')
+    @songs= Song.search(params[:search])  
   end
 
   def create
