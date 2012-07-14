@@ -1,0 +1,65 @@
+<li><%= link_to "HOME", root_path %></li>
+ <li id="fat-menu" class="dropdown">
+   <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+     PLANNING <b class="caret"></b>
+   </a>
+   <ul class="dropdown-menu">
+     <li><%= link_to "BROWSE SET LISTS", setlists_path %></li>
+     <li><%= link_to "CREATE SET LIST", new_setlist_path %></li>
+   </ul>
+ </li>
+
+<!--scheduling_path %>-->
+
+
+  <li id="fat-menu" class="dropdown">
+   <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+     SCHEDULING <b class="caret"></b>
+   </a>
+   <ul class="dropdown-menu">
+     <li><%= link_to "ALL SERVICES", root_path %></li>
+     <li><%= link_to "NEW SERVICE", new_service_path %></li>
+   </ul>
+ </li>
+
+ <!--people_path -->
+
+ <li id="fat-menu" class="dropdown">
+   <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+     PEOPLE <b class="caret"></b>
+   </a>
+   <ul class="dropdown-menu">
+     <li><%= link_to "MANAGE BAND", users_path %></li>
+     <li><%= link_to "ADD BAND MEMBER", new_user_path %></li>
+     <li><%= link_to "MANAGE ROLES", assignments_path %></li>
+     <li><%= link_to "ASSIGN ROLES", new_assignment_path %></li> 
+   </ul>
+ </li>
+
+
+<!-- library_path -->
+
+ <li id="fat-menu" class="dropdown">
+   <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+     LIBRARY <b class="caret"></b>
+   </a>
+   <ul class="dropdown-menu">
+     <li><%= link_to "BROWSE LIBRARY", songs_path %></li>
+     <li><%= link_to "ADD SONGS", new_song_path %></li>
+   </ul>
+ </li>
+
+
+<li id="fat-menu" class="dropdown">
+ <a href="#" class ="dropdown-toggle" data-toggle="dropdown">
+   ACCOUNT <b class="caret"></b>
+ </a>
+ <ul class="dropdown-menu">
+   <li><%= link_to "PROFILE", current_user %></li>
+   <li><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
+   <li class="divider"></li>
+   <li>
+     <%= link_to "SIGN OUT", signout_path, method: "delete" %>
+   </li>
+ </ul>
+</li>

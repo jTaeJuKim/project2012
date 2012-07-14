@@ -24,11 +24,12 @@ class SetlistsController < ApplicationController
   end
 
   def edit
-    @songs = Song.all(order: 'title')
+    @songs= Song.search(params[:search])
+    #@songs = Song.all(order: 'title')
     @setlist = Setlist.find(params[:id])
     @allocations = @setlist.allocations
     @allocation = Allocation.new
-    @selections = Song.all.collect {|s| [ [s.title, s.artist].join(" by "), s.id ]   }
+    @selections = Song.all.collect {|s| [ [s.title, s.artist].join(" by "), s.id ]}
   end
 
 
@@ -57,7 +58,7 @@ class SetlistsController < ApplicationController
   end
 
   def index
-    @setlists = Setlist.all
+    @setlists = Setlist.all(order: 'date')
   end
 
   def destroy

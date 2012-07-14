@@ -15,8 +15,10 @@
       <th>Artist</th>
       <th>Key</th>
       <th>Tags</th>
+      <% if current_user.admin? %>
       <th>Click to edit</th>
       <th>Click to delete</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>

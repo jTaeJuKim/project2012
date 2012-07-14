@@ -13,10 +13,10 @@ class Song < ActiveRecord::Base
 #method for searching by title
   def self.search(search)
     if search
-      find(:all, conditions: ['title LIKE ?', "%#{search}%"])
+      find(:all, conditions: ['title LIKE ?', "%#{search}%"], order: 'title')
     else
       #if nothing is inputed then just show all songs
-      find(:all)
+      find(:all, order: 'title')
     end
   end
   

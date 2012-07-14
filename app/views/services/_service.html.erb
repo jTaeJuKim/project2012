@@ -2,7 +2,11 @@
   <% service.destroy %>
 <% end %>
 <tr>
-	<td><%=link_to service.date, edit_service_path(service.id) %></td>
+	<% if current_user.admin? %>
+	  <td><%=link_to service.date, edit_service_path(service.id) %></td>
+	<% else %>
+	  <td><%= service.date %></td>	
+	<%end%>
 	<td><%= service.leader %></td>
 
 	<td>
@@ -75,9 +79,11 @@
 		  <%= service.soundPM %>
 		<% end %>
 	</td>
+	<% if current_user.admin? %>
 	<td>
 		<%= link_to "Delete", service, method: :delete,
 	                                data: { confirm: 
 	                                	"Are you sure you want to delete?" }%>
 	</td>
+	<% end %>
 </tr>

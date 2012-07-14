@@ -1,13 +1,15 @@
+
 <div>
   <%=nested_form_for @allocation do|builder|%>
-    <%=builder.label :song_id, "Pick a song" %>
+    <%=builder.label :song_id, "Pick a song from the library" %>
 
      <%= builder.hidden_field :setlist_id, value: @setlist.id %>
 
-     <%= builder.select(:song_id, options_for_select(@selections), 
-     {include_blank: true}, html:{multiple: true, size: 7}) %>
+     <%= builder.select(:song_id, options_for_select(@selections.sort!), 
+     {}, html: {multiple: true, size: 7}) %>
 
-     <!-- builder.select(:song_id, options_from_collection_for_select(@songs, "id", "title", @allocation.song_id), {}, { :multiple => true, :size =>7 }) -->
+
+    <%= link_to "Cancel", setlist_path(@setlist), class: "btn btn-large btn-danger" %>
 
     <%=builder.submit "Add Song", class: "btn btn-large btn-primary", id: "addSongToSet" %>
   <% end %>
