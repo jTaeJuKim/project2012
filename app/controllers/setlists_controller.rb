@@ -40,25 +40,26 @@ class SetlistsController < ApplicationController
     @allocations = @setlist.allocations
     @allocation = Allocation.new
 
+    #Allocation parameters
     @allocation.song_id = params[:allocation][:song_id]
     @allocation.setlist_id = @setlist.id
+    @allocation.songPosition = @setlist.songs.count + 1
 
     if @setlist.update_attributes(params[:setlist])
       if @allocation.save
         flash[:success] = "SETLIST SAVED!"
         redirect_to edit_setlist_path(@setlist)
       else
-        flash[:fail] = "Setlist not saved"
+        flash[:fail] = "Sorry there was an error adding songs to the setlist"
         render 'edit'
       end
     else
-      flash[:fail] = "FAIL!"
+      flash[:fail] = "Invalid Set"
       render 'edit'
     end
   end
 
   def index
-    #@setlists = Setlist.all(order: 'date')
     #show most recent setlist first
     @setlists = Setlist.order("date DESC")
   end

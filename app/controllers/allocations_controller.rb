@@ -21,7 +21,19 @@ class AllocationsController < ApplicationController
     @allocation = Allocation.find(params[:id])
 
     @setlist = Setlist.find(@allocation.setlist_id)
+    @otherSongs = @setlist.allocations #find all other allocation records.
+
+
     Allocation.find(params[:id]).destroy
+
+     @otherSongs.each do |n|
+
+      if(n.songPosition > @allocation.songPosition)
+        n.songPosition = n.songPosition - 1
+        n.save!
+      end
+      
+    end
     flash[:success] = "Song removed."
     redirect_to edit_setlist_path(@setlist)
   end

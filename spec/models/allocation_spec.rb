@@ -4,7 +4,7 @@ describe Allocation do
 
   let(:song){ FactoryGirl.create(:song) }
   let(:setlist){ FactoryGirl.create(:setlist) }
-  let(:allocation){ setlist.allocations.build(song_id: song.id) }
+  let(:allocation){ setlist.allocations.build(song_id: song.id, songPosition: 1) }
 
   subject{ allocation }
 
@@ -12,6 +12,7 @@ describe Allocation do
 
   it{ should respond_to(:setlist_id) }
   it{ should respond_to(:song_id) }
+  it{ should respond_to(:songPosition) }
 
   describe "When setlist id is not present" do
   	before{ allocation.setlist_id = "" }
@@ -24,13 +25,13 @@ describe Allocation do
   end
 
 
-  describe "accessible attributes" do
-    it "should not allow access to song_id" do
-      expect do
-        Allocation.new(follower_id: song.id)
-      end.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
-    end    
-  end
+  # describe "accessible attributes" do
+  #   it "should not allow access to song_id" do
+  #     expect do
+  #       Allocation.new(song_id: song.id)
+  #     end.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
+  #   end    
+  # end
 
   describe "allocating methods" do    
     it { should respond_to(:song) }
