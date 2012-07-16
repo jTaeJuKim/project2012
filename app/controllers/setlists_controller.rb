@@ -1,8 +1,6 @@
 class SetlistsController < ApplicationController
   def new
   	@setlist = Setlist.new
-    @songs = Song.all
-    @allocations = @setlist.allocations
   end
 
   def create
@@ -11,7 +9,7 @@ class SetlistsController < ApplicationController
   		#success!
   		flash[:success] = "Setlist saved"
       #@setlist.allocations.build produce invalid allocation with nil id
-  		redirect_to setlists_path
+  		redirect_to edit_setlist_path(@setlist)
   	else
   		#FAIL!
   		render 'new'
