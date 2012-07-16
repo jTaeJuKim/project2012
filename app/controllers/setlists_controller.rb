@@ -58,7 +58,9 @@ class SetlistsController < ApplicationController
   end
 
   def index
-    @setlists = Setlist.all(order: 'date')
+    #@setlists = Setlist.all(order: 'date')
+    #show most recent setlist first
+    @setlists = Setlist.order("date DESC")
   end
 
   def destroy
