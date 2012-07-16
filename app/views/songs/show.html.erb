@@ -7,9 +7,7 @@
 
 <div id="lyrics">
 
-	<pre data-key= <%= @song.key%>> 
-		<%= @song.lyrics %>
-	</pre>
+	<pre data-key= <%= @song.key%>><%= @song.lyrics %></pre>
 	<% if current_user.admin? %>
 		<div id= "editSong">
 			<%= link_to "EDIT", edit_song_path, class: "btn btn-large btn-primary"%>
