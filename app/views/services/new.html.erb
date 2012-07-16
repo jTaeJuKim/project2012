@@ -5,7 +5,7 @@
       <%=form_for(@service) do|f|%>
 
          <%=f.label :date, "Date" %>
-         <span><%=f.date_select :date, start_year: Time.now.year %></span>
+         <span><%=f.date_select :date, id: "dateField" %></span>
          <!-- f.text_field :date, class: "datepicker" -->
          
 

@@ -1,10 +1,10 @@
 <% provide(:title, 'Browse Library') %>
 <h1>All songs</h1>
-<p>Note that the search function is still under construction.</p>
-<%= form_tag songs_path, :method => 'get' do %>
+
+<%= form_tag songs_path, method: 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil, class: "btn btn-large btn-primary" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-large btn-primary" %>
   </p>
 <% end %>
 
