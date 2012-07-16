@@ -24,6 +24,17 @@
     <%= render @services %>
   </tbody>
 </table>
+
+<div>
 <% if current_user.admin? %>
    <%= link_to "Plan Another Service", new_service_path, class: "btn btn-large btn-primary" %>
 <% end %>
+</div>
+
+<div id="singerBox">
+  <ul>
+    <li>Vox 1: Buki, Fran, Cynthia, Mumie</li>
+    <li>Vox 2: Jane, Grace, Julia, Zino</li>
+    <li>Vox 3: Rachel Clews, Mary, Emmanuel</li>
+  </ul>
+</div>

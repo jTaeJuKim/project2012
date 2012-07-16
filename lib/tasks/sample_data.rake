@@ -126,7 +126,7 @@ namespace :db do
   task populate: :environment do
     roles = ["Leader", "Acoustic", "Electric", "Piano",
      "Bass", "Drums", "Sax", "Violin",
-      "Vox1", "Vox2", "Vox3", "AM Sound", "PM Sound"]
+      "Vox 1", "Vox 2", "Vox 3", "AM Sound", "PM Sound"]
 
       13.times do |n|
         bandRoles = roles[n]

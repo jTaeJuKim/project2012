@@ -5,7 +5,6 @@ class AllocationsController < ApplicationController
   end
 
   def create
-
   	@allocation = Allocation.new(params[:allocation])
     
   	if @allocation.save
@@ -25,6 +24,8 @@ class AllocationsController < ApplicationController
 
 
     Allocation.find(params[:id]).destroy
+
+    #destroying an allocation effects the order of the songs
 
      @otherSongs.each do |n|
 

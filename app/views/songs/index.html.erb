@@ -7,7 +7,7 @@
     <%= submit_tag "Search", name: nil, class: "btn btn-large btn-primary" %>
   </p>
 <% end %>
-
+<div id=allSongs>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -16,8 +16,8 @@
       <th>Key</th>
       <th>Tags</th>
       <% if current_user.admin? %>
-      <th>Click to edit</th>
-      <th>Click to delete</th>
+        <th>Click to edit</th>
+        <th>Click to delete</th>
       <% end %>
     </tr>
   </thead>
@@ -25,4 +25,8 @@
     <%= render @songs %>
   </tbody>
 </table>
-<%= link_to "Add new song", new_song_path, class: "btn btn-large btn-primary" %>
+</div>
+
+<div id="newSongButton">
+  <%= link_to "Add new song", new_song_path, class: "btn btn-large btn-primary" %>
+<div>

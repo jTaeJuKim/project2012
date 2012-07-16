@@ -1,5 +1,4 @@
 @import "bootstrap";
-  
 
 /* Home page table */
 table{
@@ -157,8 +156,7 @@ div#workArea{
   max-height: 370px;
 }
 
-div#library{
-
+div#library{ 
   select{
     width: 100%;
   }
@@ -183,11 +181,26 @@ div#currentSet{
   margin-bottom: 10px;
 }
 
-
-// div#transposer{
-//   padding-top: 25px;
-// }
-
 div#lyrics{
   padding-top: 35px;
+}
+
+div#allSongs{
+  overflow-y: scroll;
+  max-height: 330px;
+  clear: both;
+  border: solid 1px;
+  border-color: #000000; 
+}
+
+div#newSongButton{
+  padding-top:20px;
+}
+
+div#singerBox{
+  width: 27%;
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: #D3D3D3;
+  background-color: #F9F9F9;
 }
