@@ -1,7 +1,7 @@
 <h1>Edit a Setlist</h1>
 
 
-<div class="row">
+<div class="row fluid">
    <div class="span8">
       <%=form_for(@setlist) do|f|%>
  
@@ -22,4 +22,12 @@
 
 
    </div>
+
+  <div class="span6" id="recommender">
+    <h2>Recommendations</h2>
+    <div id="recSpace">
+      <%= link_to image_tag("WIP.jpg", alt: "Work in Progress", width: "100%", height: "auto", id: "WIP"), 'http://doctorcatmd.com/2011-01-10/doctor-cat' %>
+    </div> 
+  </div>
 </div>
+
