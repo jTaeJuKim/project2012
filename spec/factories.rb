@@ -40,5 +40,9 @@ FactoryGirl.define do
     date Date.today
     morning true
   end
+
+  factory :category do
+    tag "Test Tag"
+  end
   
 end

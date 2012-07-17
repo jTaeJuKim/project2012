@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Song do
   #lyrics set to a*256 to ensure 255 character limit DOES NOT apply 
-  before{ @song = Song.new(title: "Example Song", artist: "Example Artist", lyrics: "a"*256)} 
+  before{ @song = Song.new(title: "Example Song", artist: "Example Artist", lyrics: "a"*256,
+    key: "G")} 
 
   subject{ @song }
 
@@ -12,6 +13,10 @@ describe Song do
   it{ should respond_to(:key) }
   it{ should respond_to(:allocations)}
   it{ should respond_to(:setlists)}
+  it{ should respond_to(:categorizations) }
+  it{ should respond_to(:categories)}
+
+  it{should be_valid}
 
   describe "when title is blank" do
   	before{ @song.title = "" }
@@ -26,6 +31,11 @@ describe Song do
   describe "when lyrics are blank" do
   	before{ @song.lyrics = ""}
   	it{ should_not be_valid }
+  end
+
+  describe "when key is blank" do
+    before{ @song.key = "" }
+    it{ should_not be_valid}
   end
   
 end

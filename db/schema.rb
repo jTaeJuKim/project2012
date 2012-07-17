@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717103207) do
+ActiveRecord::Schema.define(:version => 20120717113616) do
 
   create_table "allocations", :force => true do |t|
     t.integer  "setlist_id"

@@ -24,15 +24,6 @@ describe Allocation do
   	it{ should_not be_valid }
   end
 
-
-  # describe "accessible attributes" do
-  #   it "should not allow access to song_id" do
-  #     expect do
-  #       Allocation.new(song_id: song.id)
-  #     end.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
-  #   end    
-  # end
-
   describe "allocating methods" do    
     it { should respond_to(:song) }
     it { should respond_to(:setlist) }
@@ -47,10 +38,11 @@ end
 #
 # Table name: allocations
 #
-#  id         :integer         not null, primary key
-#  setlist_id :integer
-#  song_id    :integer
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+#  id           :integer         not null, primary key
+#  setlist_id   :integer
+#  song_id      :integer
+#  created_at   :datetime        not null
+#  updated_at   :datetime        not null
+#  songPosition :integer
 #
 
