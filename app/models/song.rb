@@ -1,5 +1,5 @@
 class Song < ActiveRecord::Base
-  attr_accessible :artist, :lyrics, :title, :key
+  attr_accessible :artist, :lyrics, :title, :key, :categorizations_attibutes, :categories_attributes
 
   has_many :allocations, dependent: :destroy  #if song destroyed then remove from set lists 
   has_many :setlists, through: :allocations
@@ -12,6 +12,8 @@ class Song < ActiveRecord::Base
   validates :artist, presence: true
   validates :lyrics, presence: true
   validates :key, presence: true
+
+  accepts_nested_attributes_for :categorizations, :reject_if => lambda { |a| a[:category_id].blank? }
 
 #method for searching by title
   def self.search(search)

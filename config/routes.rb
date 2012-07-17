@@ -1,12 +1,18 @@
 Proj::Application.routes.draw do
 
 
+  get "categorizations/new"
+
+  get "categories/new"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :songs
   resources :roles
   resources :assignments
   resources :services
+  resources :categories
+  resources :categorizations
 
   resources :setlists do
     get :songs

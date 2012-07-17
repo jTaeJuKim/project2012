@@ -22,6 +22,7 @@ class SongsController < ApplicationController
       flash[:success] = "Changes saved!"
       redirect_to songs_path
     else
+      flash[:fail] = "Error"
       render 'edit'
     end
   end
@@ -33,7 +34,6 @@ class SongsController < ApplicationController
   def create
   	@song = Song.new(params[:song])
   	if @song.save
-  		#success!
   		flash[:success] = "Song successfully added to library"
   		redirect_to @song
   	else

@@ -17,8 +17,9 @@
 //= require_tree .
 
 
+
  $(function() {
-	    $("pre").transpose();
+	    $("pre#chords").transpose();
 	  });
 
 /*!

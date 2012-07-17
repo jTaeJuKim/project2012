@@ -14,8 +14,14 @@
        <%= f.label :key, "Root Key" %>
       <%= f.select :key, options_for_select([' ','A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#']) %>
 
+       <!-- nested_form_for(@song.categorizations.build) do |builder| -->
+        <!-- builder.label :category_id, "SELECT TAGS" -->
+      <!-- end -->
+
       <%= f.label :lyrics, "Lyrics" %>
       <%= f.text_area :lyrics %>
+
+     
 
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
       <%= link_to "Cancel", songs_path, class: "btn btn-large btn-danger" %>

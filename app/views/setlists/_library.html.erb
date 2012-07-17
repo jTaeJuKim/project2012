@@ -3,11 +3,7 @@
   <%=nested_form_for @allocation do|builder|%>
     <%=builder.label :song_id, "Songs" %>
 
-     <%= builder.hidden_field :setlist_id, value: @setlist.id %>
-
-     <%= builder.select(:song_id, options_for_select(@selections.sort!), 
-     {}, html: {multiple: true, size: 7}) %>
-
+     <%= builder.select(:song_id, options_for_select(@selections.sort!), {}, options:{multiple: true, size: 7}) %>
 
     <%= link_to "Cancel", setlist_path(@setlist), class: "btn btn-large btn-danger" %>
 

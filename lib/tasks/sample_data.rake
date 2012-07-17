@@ -338,8 +338,30 @@ namespace :db do
     Allocation.create(setlist_id: 21,song_id: 3, songPosition:3)
 
 
-  end
+  end #end allocations
 
+  desc "Fill database with categories"
+  task populate: :environment do
+    testCat = ["fast tempo", "slow tempo", "medium tempo"]
+
+    3.times do |c|
+      Category.create(tag: testCat[c])
+    end 
+  end # end categories
+
+  desc "Fill database with categorizations"
+  task populate: :environment do
+
+  cat_id = [3, 1, 2, 2, 1, 3, 3, 3, 2, 1,
+    1, 2, 2, 1, 1, 3, 2, 3, 1, 3,
+    2, 2, 3, 3, 1, 1, 3, 1, 2, 2,
+    2, 2, 1, 1, 1, 1, 2, 1, 3, 2,
+    2, 3, 3, 2, 1, 3, 2, 1, 1, 2]
+
+    50.times do |c|
+      Categorization.create(category_id: cat_id[c], song_id: c)
+    end
+  end #end categorizations
 
 
 end

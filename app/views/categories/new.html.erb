@@ -1,0 +1,13 @@
+<h2>Create a new tag</h2>
+
+<%= render 'shared/category_error_messages' %>
+
+<div class="span6 offset3">
+	<%= form_for @category do |f|%>
+	  <%= f.label :tag, "Tag Description" %>
+	  <%= f.text_field :tag %>
+
+	  <%= f.submit "Create Tag", class: "btn btn-large btn-primary" %>
+	<% end %>
+</div>
+

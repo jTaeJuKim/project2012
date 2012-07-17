@@ -30,7 +30,7 @@ describe "Role pages" do
       let(:sample_role){ "sample role" }
       before do
         fill_in "Describe the role below", with: sample_role
-        expect{ click_button "Create Role" }.to change(User, :count).by(1)
+        expect{ click_button "Create Role" }.to change(Role, :count).by(1)
       end
 
     end
