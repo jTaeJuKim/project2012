@@ -8,6 +8,7 @@ class Assignment < ActiveRecord::Base
   validates :user_id, presence: true
   validates_uniqueness_of :user_id, :scope => :role_id
 
+#seeing as I'll be searching for users according to roles and vice versa it makes sense to have an index on both
   
 end
 # == Schema Information

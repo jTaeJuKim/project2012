@@ -4,6 +4,9 @@ class Song < ActiveRecord::Base
   has_many :allocations, dependent: :destroy  #if song destroyed then remove from set lists 
   has_many :setlists, through: :allocations
 
+  has_many :categorizations, dependent: :destroy #if song destroyed, delete associations
+  has_many :categories, through: :categorizations
+
   #title, artist, and lyrics fields cannot be blank
   validates :title, presence: true
   validates :artist, presence: true
