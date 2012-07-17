@@ -21,6 +21,9 @@ class ServicesController < ApplicationController
 
   def index
   	@services = Service.all(order: 'date')
+    @vox1 = Role.find_by_description("Vox 1")
+    @vox2 = Role.find_by_description("Vox 2")
+    @vox3 = Role.find_by_description("Vox 3")
   end
 
   def edit

@@ -13,6 +13,11 @@ describe "Assignment pages" do
       @assignment = Assignment.create(user_id: @user.id, role_id: @roleSecond.id)
       #NOTE when you create a user in the test database the id is not automatically 1
 
+	  Role.create(description: "Vox 1")
+	  Role.create(description: "Vox 2")
+	  Role.create(description: "Vox 3")
+
+
       sign_in(@user)
     end #sign in user to access the subject pages
 

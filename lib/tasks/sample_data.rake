@@ -18,18 +18,22 @@ namespace :db do
       password_confirmation: "foobar")
     supervisor.toggle!(:admin)
 
-    18.times do |n|
+    25.times do |n|
 
       first = ["Jo", "Gareth", "Graham", "Barry", "Fran",
       "Justin", "Helen", "Rachael", "Michael", "Graham",
-      "Chloe", "Tony", "Leon", "Andy", "Gareth", "Lily", "Lal", "Dan"]
+      "Chloe", "Tony", "Leon", "Andy", "Gareth",
+      "Lily", "Lal", "Dan", "Rachel", "Cynthia",
+      "Buki", "Jane", "Julia", "Mary", "Mumie"]
       last =["Gordon", "Donaldson", "Dargie", "McAllister", "Hutchison",
       "Kim", "Rowe", "West", "Robertson", "Alder",
-      "Kerr", "Duncan", "Harris", "West", "Boswell", "Fox-Davies", "Dhillon", "Clews"]
+      "Kerr", "Duncan", "Harris", "West", "Boswell",
+       "Fox-Davies", "Dhillon", "Clews", "Clews", "Twum", 
+       "Olowo", "Merson", "Duthie", "Arthur", "Shangpilang"]
       name  = first[n] 
       surname = last[n] 
-      email = "example-#{n+1}@tkcc.org"
-      password  = "password"
+      email = "#{first[n]}.#{last[n]}@tkcc.org"
+      password  = "foobar"
       phone= "01330999877"
       User.create!(name: name,
                    surname: surname,
@@ -143,16 +147,18 @@ namespace :db do
        10, 11, 12, 13, 14,
        15, 15, 15, 16, 16,
        17, 18, 18, 19, 19,
-       20, 20]
+       20, 20, 21, 22, 23, 
+       24, 25, 26, 27]
       roles = [1, 2, 1, 3, 5,
        1, 2, 1, 4, 1,
        8, 3, 5, 4, 4,
        5, 6, 6, 7, 7,
        6, 12, 13, 2, 5,
        5, 12, 13, 12, 13,
-       12, 13]
+       12, 13, 11, 9, 9, 
+       10, 10, 11, 9]
 
-       32.times do |r|
+       39.times do |r|
         u_id = users[r]
         r_id = roles[r]
         Assignment.create!(user_id: u_id, role_id: r_id)

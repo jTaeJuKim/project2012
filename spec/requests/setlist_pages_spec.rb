@@ -7,15 +7,22 @@ describe "Setlist Pages" do
     before do
     	@user = User.create(name: "Jim", surname: "User", email:"jim@jim.com",
     	phone:"01224555555", password: "foobar", password_confirmation: "foobar")
+
+	    Role.create(description: "Vox 1")
+	    Role.create(description: "Vox 2")
+	    Role.create(description: "Vox 3")
+  
     	sign_in(@user)
     	@setlist = Setlist.create(date: Date.today, morning: true)
     	@song = FactoryGirl.create(:song)
+
     end
 
 
 	describe "setlist index" do
 
-		before{ visit setlists_path }
+		before{ visit setlists_path } 
+
 
 		it "should list each setlist with and add or delete link" do
 			Setlist.all.each do |setlist|

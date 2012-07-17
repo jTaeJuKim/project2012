@@ -4,8 +4,15 @@ describe "UserPages" do
   
   subject{ page }
 
+  before do
+    Role.create(description: "Vox 1")
+    Role.create(description: "Vox 2")
+    Role.create(description: "Vox 3")
+  end
+
   describe "Index" do
     let(:user){FactoryGirl.create(:user)}
+
 
     before(:all){ 30.times{ FactoryGirl.create(:user) } }
     after(:all){User.delete_all}

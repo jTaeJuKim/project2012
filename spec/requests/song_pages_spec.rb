@@ -7,6 +7,11 @@ describe "Song pages" do
   before do
     @user = User.create(name: "Jim", surname: "User", email:"jim@jim.com",
       phone:"01224555555", password: "foobar", password_confirmation: "foobar")
+
+    Role.create(description: "Vox 1")
+    Role.create(description: "Vox 2")
+    Role.create(description: "Vox 3")
+
     sign_in(@user)
   end
 
@@ -17,7 +22,6 @@ describe "Song pages" do
 
     it { should have_selector('h3',    text: song.title) }
     it { should have_selector('h3', text: song.artist) }
-    it { should have_selector('h3', text: 'Lyrics')}
     it { should have_selector('pre', text: song.lyrics) }
     it { should have_selector('h3', text: song.key)}
   end

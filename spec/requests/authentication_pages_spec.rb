@@ -4,6 +4,12 @@ describe "Authentication" do
   
   subject{ page }
 
+  before do
+    Role.create(description: "Vox 1")
+    Role.create(description: "Vox 2")
+    Role.create(description: "Vox 3")
+  end
+
   describe "sign in page" do
   	before{ visit signin_path }
 

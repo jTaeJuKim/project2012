@@ -9,6 +9,11 @@ describe "Role pages" do
   before do
     @user = User.create(name: "Jim", surname: "User", email:"jim@jim.com",
     phone:"01224555555", password: "foobar", password_confirmation: "foobar")
+
+    Role.create(description: "Vox 1")
+    Role.create(description: "Vox 2")
+    Role.create(description: "Vox 3")
+
     sign_in(@user)
   end #sign in user to access the subject pages
 

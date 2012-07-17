@@ -25,16 +25,30 @@
   </tbody>
 </table>
 
+
 <div>
 <% if current_user.admin? %>
    <%= link_to "Plan Another Service", new_service_path, class: "btn btn-large btn-primary" %>
 <% end %>
 </div>
 
+
 <div id="singerBox">
   <ul>
-    <li>Vox 1: Buki, Fran, Cynthia, Mumie</li>
-    <li>Vox 2: Jane, Grace, Julia, Zino</li>
-    <li>Vox 3: Rachel Clews, Mary, Emmanuel</li>
+    <li>
+      Vox 1: <% @vox1.users.each do |n| %>
+      <%= n.name + " " + n.surname + " | " %>
+      <% end %>
+    </li>
+    <li>
+      Vox 2: <% @vox2.users.each do |n| %>
+      <%= n.name + " " + n.surname + " | " %>
+      <% end %>
+    </li>
+    <li>
+      Vox 3: <% @vox3.users.each do |n| %>
+      <%= n.name + " " + n.surname + " | " %>
+      <% end %>
+    </li>
   </ul>
 </div>
