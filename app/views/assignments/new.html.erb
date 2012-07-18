@@ -6,10 +6,10 @@
 
          <%=f.label :user_id, "Band Member" %>
 
-         <%=f.select :user_id, options_for_select(User.all.collect {|u| [ [u.name,u.surname].join(" "), u.id ] }, { :include_blank => true }), prompt: "" %>
+         <%=f.select :user_id, options_for_select(User.all.collect {|u| [ [u.name,u.surname].join(" "), u.id ] }.sort!, { :include_blank => true }), prompt: "" %>
 
          <%=f.label :role_id, "Role" %>
-         <%=f.select :role_id, options_for_select(Role.all.collect {|r| [ r.description, r.id ] }, { :include_blank => true }), prompt: "" %>
+         <%=f.select :role_id, options_for_select(Role.all.collect {|r| [ r.description, r.id ] }.sort!, { :include_blank => true }), prompt: "" %>
 
          <%=f.submit "Assign role", class: "btn btn-large btn-primary" %>
       <% end %>

@@ -4,8 +4,7 @@
 	<td><%= "(#{song.key})"%></td>
 	<td><%= song.categories.select("tag").map(&:tag).join(", ") %></td>
 	<% if current_user.admin? %>
-	<td><%= link_to "EDIT", edit_song_path(song) %></td>
-	<td><%= link_to "Add/Remove Tags", '#' %></td> 
+	<td><%= link_to "EDIT", edit_song_path(song) %></td> 
 	<td><%= link_to "Delete", song, method: :delete,
 	                                data: { confirm: 
 	                                	"Are you sure you want

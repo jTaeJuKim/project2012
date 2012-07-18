@@ -1,6 +1,6 @@
 <h2>Manage tags</h2>
 
-<div class="span6">
+<div class="span8">
 	<table class="table table-striped table-bordered">
 		<thead>
 			<th>TAG</th>
@@ -10,4 +10,7 @@
 			<%= render @categories %>
 		</tbody>
 	</table>
+
+	<%= link_to "Add more tags", new_category_path, class: "btn btn-large btn-primary" %>
 </div>
+

@@ -359,7 +359,7 @@ namespace :db do
     2, 3, 3, 2, 1, 3, 2, 1, 1, 2]
 
     50.times do |c|
-      Categorization.create(category_id: cat_id[c], song_id: c)
+      Categorization.create(category_id: cat_id[c], song_id: c + 1)
     end
   end #end categorizations
 

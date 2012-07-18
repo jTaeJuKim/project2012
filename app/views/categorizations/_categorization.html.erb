@@ -1,0 +1,7 @@
+<tr>
+	<td><%= categorization.song.title %></td>
+	<td><%= categorization.category.tag %></td>
+	<td><%= link_to "DELETE TAG", categorization, method: :delete,
+	                                data: { confirm: 
+	                                	"Are you sure you want to delete this tag?" } %></td>
+</tr>

@@ -1,7 +1,18 @@
-<h1>Categorizations#new</h1>
+<h1>Assign Tags</h1>
 
-<div id="tagForm">
+<div id="tagForm" class="span9">
 	<%= form_for(@categorization) do |f| %>
-	   <%= f.label :song_id, "#{@song.title}" %>
+	   <%= f.label :song_id, "Pick a song" %>
+	   <%=f.select :song_id, options_for_select(
+	   	Song.all.collect {|s| [ [s.title,s.artist].join(" by "), s.id ] }.sort!, 
+	   { :include_blank => true }), prompt: "" %>
+	   <%= f.label :category_id, "Pick a tag to assign" %>
+	   <%=f.select :category_id, options_for_select(Category.all.collect {|c| [ [c.tag].join, c.id ] }.sort!, 
+	   { :include_blank => true }), prompt: "" %>
+
+	   <%=f.submit "Assign tag", class: "btn btn-large btn-primary" %>
+
 	<%end%>
 </div>
+
+
