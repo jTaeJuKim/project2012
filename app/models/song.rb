@@ -19,7 +19,7 @@ class Song < ActiveRecord::Base
     res=includes(:categories).order('title')
     res=res.where('title LIKE :search OR categories.tag 
       LIKE :search 
-      OR lyrics LIKE :search',:search=>"%#{search}%") if search
+      OR lyrics LIKE :search OR artist LIKE :search',:search=>"%#{search}%") if search
     res
   end
 

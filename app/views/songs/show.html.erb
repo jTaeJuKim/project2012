@@ -1,12 +1,16 @@
 
 <%provide(:title, 'SONGS')%>
-<div id="printSong" class="span12 offset2">
+<div id="printSong" class="span9">
 	<h3>Title: <%= @song.title %></h3> 
-	<h3>Artist: <%= @song.artist %></h3>
-	<h3>Original Key: <%=@song.key %></h3>
-	<h3>
-		Tags: <%= @song.categories.select("tag").map(&:tag).join(", ") %>
-	</h3>
+	<div id="keyAndTags">
+	    <h3>Artist: <%= @song.artist %></h3>
+	
+		<h3>Original Key: <%=@song.key %></h3>
+		<h3>
+			Tags: <%= @song.categories.select("tag").map(&:tag).join(", ") %>
+		</h3>
+    </div>
+
 
 	<div id="lyrics">
 		<pre data-key= <%= @song.key%> id="chords"><%= @song.lyrics %></pre>
