@@ -28,6 +28,9 @@ Proj::Application.routes.draw do
   match '/library', to: 'static_pages#library'
   match '/people', to: 'static_pages#people'
 
+  #CCLI returns
+  match '/ccli', to: 'songs#ccli'
+
   match '/new_user', to: 'users#new'
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete

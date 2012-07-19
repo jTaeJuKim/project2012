@@ -2,6 +2,11 @@ class SongsController < ApplicationController
 
   #before_filter :signed_in_user
 
+  def ccli
+    #select all songs which have been created this year
+    @returns = Song.where("created_at > ?", Date.today - 365).order('title')
+  end
+
   def new
   	@song = Song.new
   end
@@ -28,7 +33,7 @@ class SongsController < ApplicationController
   end
 
   def index
-    @songs= Song.search(params[:search])  
+    @songs= Song.search(params[:search])
   end
 
   def create

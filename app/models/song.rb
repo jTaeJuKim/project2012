@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
   attr_accessible :artist, :lyrics, :title, :key, :categorizations_attibutes, :categories_attributes
 
-  has_many :allocations, dependent: :destroy  #if song destroyed then remove from set lists 
+  has_many :allocations #dependent: :destroy  #if song destroyed then don't remove from set lists for CCLI 
   has_many :setlists, through: :allocations
 
   has_many :categorizations, dependent: :destroy #if song destroyed, delete associations
@@ -15,16 +15,26 @@ class Song < ActiveRecord::Base
 
   accepts_nested_attributes_for :categorizations, :reject_if => lambda { |a| a[:category_id].blank? }
 
-#method for searching by title
   def self.search(search)
-    if search
-      find(:all, conditions: ['title LIKE ?', "%#{search}%"], order: 'title')
-    else
-      #if nothing is inputed then just show all songs
-      find(:all, order: 'title')
-    end
+    res=includes(:categories).order('title')
+    res=res.where('title LIKE :search OR categories.tag 
+      LIKE :search 
+      OR lyrics LIKE :search',:search=>"%#{search}%") if search
+    res
   end
-  
+
+
+#   def self.search(search)
+#     res=includes(:categories).order('title')
+#     res=res.where('title LIKE :search OR lyrics LIKE :search OR artist LIKE :search',:search=>"%#{search}%") if search
+#     res
+#   end
+
+#    def self.search_by_category_desc(search)
+#     res=joins(:categories).order('title')
+#     res=res.where('categories.tag LIKE ?',"%#{search}%")
+#   end
+
 end
 # == Schema Information
 #

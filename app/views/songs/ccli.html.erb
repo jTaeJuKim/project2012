@@ -1,0 +1,18 @@
+<h2>CCLI Return Data</h2>
+
+<h3>This is a list of all the songs which have been added to the database over the past year.</h3>
+
+<div id="CCLI" class="span6">
+	<table class="table table-striped table-bordered">
+		<thead>
+			<th>Song Title</th>
+		</thead>
+		<tbody>
+			<% @returns.each do |n| %>
+			  <tr>
+			  	<td><%= n.title %></td>
+			  </tr>
+			<% end %>
+		</tbody>		
+	</table>
+</div>
