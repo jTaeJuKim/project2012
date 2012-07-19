@@ -8,8 +8,7 @@ class SetlistsController < ApplicationController
   	if @setlist.save
   		#success!
   		flash[:success] = "Setlist saved"
-      #@setlist.allocations.build produce invalid allocation with nil id
-  		redirect_to edit_setlist_path(@setlist)
+  		redirect_to setlist_path(@setlist)
   	else
   		#FAIL!
   		render 'new'

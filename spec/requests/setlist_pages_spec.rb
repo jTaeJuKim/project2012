@@ -13,7 +13,7 @@ describe "Setlist Pages" do
 	    Role.create(description: "Vox 3")
   
     	sign_in(@user)
-    	@setlist = Setlist.create(date: Date.today, morning: true)
+    	@setlist = Setlist.create!(date: Date.today, morning: true)
     	@song = FactoryGirl.create(:song)
 
     end
@@ -58,30 +58,34 @@ describe "Setlist Pages" do
 
 
 
-	describe "Edit page" do
+	# describe "Edit page" do
 		
-		let(:admin) { FactoryGirl.create(:admin) }
-		let(:submit){ "Add Song" }
+	# 	let(:admin) { FactoryGirl.create(:admin) }
+	# 	let(:submit){ "Add Song" }
 	    
-	    before do
-	       sign_in admin
-	       visit edit_setlist_path(@setlist)
-	    end
+	#     before do
+	#        @secondSong = FactoryGirl.create(:song)
+	#        sign_in admin
+	#        visit edit_setlist_path(@setlist)
+	#     end
 
-	    describe "adding a song" do
-	    	before do
-	    		select("#{@song.title} by #{@song.artist}", from: 'Songs')
-	    		click_button submit
-	    	end
+	#     it{ should have_content("Edit a Setlist")}
 
-	    	it{ should have_selector('div.alert.alert-success')}
+	#     describe "adding a song" do
+	#     	before do
+	#     		select("#{@secondSong.title} by #{@secondSong.artist}", from: 'Songs')
+	#     		click_button submit
 
-	    	it "should create a new allocation" do
-	    		expect{click_button submit}.to change(Allocation, :count).by(1)
-	    	end
+	#     	end
 
-	    end # end adding a song
-	end # end edit test
+	#     	it{ should have_selector('div.alert.alert-success')}
+
+	#     	it "should create a new allocation" do
+	#     		expect{click_button submit}.to change(Allocation, :count).by(1)
+	#     	end
+
+	#     end # end adding a song
+	# end # end edit test
 
 
 
@@ -104,6 +108,7 @@ describe "Setlist Pages" do
 		  end
 
 		  it{ should have_selector('div.alert.alert-success')}
+		  it{ should have_content("No songs selected yet") }
 
 		end
 

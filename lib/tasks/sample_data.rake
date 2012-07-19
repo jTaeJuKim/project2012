@@ -190,7 +190,7 @@ namespace :db do
   desc "Fill the database with setlists"
   task populate: :environment do
     sampleDate = Date.today
-    20.times do |n|
+    21.times do |n|
       type = true
       
       if(n%2 == 0)
