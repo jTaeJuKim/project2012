@@ -1,21 +1,23 @@
 
 <%provide(:title, 'SONGS')%>
-<h3>Title: <%= @song.title %></h3> 
-<h3>Artist: <%= @song.artist %></h3>
-<h3>Original Key: <%=@song.key %></h3>
-<h3>
-	Tags: <%= @song.categories.select("tag").map(&:tag).join(", ") %>
-</h3>
+<div id="printSong" class="span12 offset2">
+	<h3>Title: <%= @song.title %></h3> 
+	<h3>Artist: <%= @song.artist %></h3>
+	<h3>Original Key: <%=@song.key %></h3>
+	<h3>
+		Tags: <%= @song.categories.select("tag").map(&:tag).join(", ") %>
+	</h3>
 
-<div id="lyrics">
-
-	<pre data-key= <%= @song.key%> id="chords"><%= @song.lyrics %></pre>
-	<% if current_user.admin? %>
-		<div id= "editSong">
-			<%= link_to "EDIT", edit_song_path, class: "btn btn-large btn-primary"%>
-		</div> 
-	<%end %>
-</div> 
+	<div id="lyrics">
+		<pre data-key= <%= @song.key%> id="chords"><%= @song.lyrics %></pre>
+		<% if current_user.admin? %>
+			<div id= "editSong">
+				<%= link_to "EDIT", edit_song_path, class: "btn btn-large btn-primary"%>
+				<%= link_to "PRINT", '#', onclick: "printpage()", class: "btn btn-large btn-warning" %>
+			</div> 
+		<%end %>
+	</div>
+</div>
 
 
 

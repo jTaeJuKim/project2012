@@ -1,3 +1,35 @@
 // Place all the styles related to the setlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#library{ 
+  select{
+    width: 100%;
+  }
+}
+
+div#songSelection{
+  overflow-y: scroll;
+  max-height: 200px;
+}
+
+div#currentSet{
+  clear:both; 
+}
+
+.btn#addSongToSet{
+  margin-bottom: 10px;
+}
+
+div#setIndex{
+  overflow-y: scroll;
+  max-height: 350px;
+}
+
+div#recSpace{
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: #D3D3D3;
+  background-color: #F9F9F9;
+  min-height: 150px;
+}
