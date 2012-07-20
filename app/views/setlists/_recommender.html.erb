@@ -1,4 +1,5 @@
  <h2>Recommendations</h2>
+ <p>These recommendations are based on songs which have been used in the past with the last song in the current setlist</p>
     <div id="recSpace">
       <% if @allocations.empty? %>
       <h3>Please add a song to the setlist in order to view recommendations.</h3>
@@ -23,7 +24,7 @@
                             <td><%= s.song.title %></td>
                             <td><%= s.song.artist %></td>
                             <td><%= s.song.key %></td>
-                            <td><%= "TAGS" %></td>
+                            <td><%= s.song.categories.select("tag").map(&:tag).join(", ") %></td>
                           <% end %>
                         </tr>
                     <% end %>
@@ -36,3 +37,4 @@
       
     </div> 
   </div>
+

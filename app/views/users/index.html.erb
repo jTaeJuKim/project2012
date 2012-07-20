@@ -1,6 +1,8 @@
 <% provide(:title, 'All users') %>
 <h1>BAND MEMBERS</h1>
 
+<div id="userIndex">
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -15,5 +17,7 @@
     <%= render @users %>
   </tbody>
 </table>
+
+</div>
 
 <%= link_to "Add Band Member", new_user_path, class: "btn btn-large btn-primary" %>
