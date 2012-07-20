@@ -1,0 +1,38 @@
+ <h2>Recommendations</h2>
+    <div id="recSpace">
+      <% if @allocations.empty? %>
+      <h3>Please add a song to the setlist in order to view recommendations.</h3>
+      <% else %>
+      <table class="table table-bordered table-striped">
+
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Key</th>
+            <th>Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+              <% @commonSetlists.each do |n| %>
+              <% @rec = n.allocations %>
+                <% @rec.each do |s| %>
+                    <% if s.setlist_id != @allocations.first.setlist_id %>
+                        <tr>
+                          <% if s.song.title != @allocations.last.song.title %>
+                            <td><%= s.song.title %></td>
+                            <td><%= s.song.artist %></td>
+                            <td><%= s.song.key %></td>
+                            <td><%= "TAGS" %></td>
+                          <% end %>
+                        </tr>
+                    <% end %>
+                <% end %>
+              <% end %>
+             <% end %> 
+
+        </tbody>
+      </table>
+      
+    </div> 
+  </div>

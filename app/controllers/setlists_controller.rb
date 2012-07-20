@@ -35,6 +35,7 @@ class SetlistsController < ApplicationController
       #find all setlists that contain a specified song
       @commonAllocations = Allocation.select(:setlist_id).where("song_id = ?", @data).map &:setlist_id
       @commonSetlists = Setlist.find(@commonAllocations)
+      # conditions:["id != ?", @setlist.id]
     end
     
 
