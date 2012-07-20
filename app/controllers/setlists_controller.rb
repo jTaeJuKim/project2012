@@ -21,12 +21,25 @@ class SetlistsController < ApplicationController
   end
 
   def edit
-    @songs= Song.search(params[:search])
-    #@songs = Song.all(order: 'title')
+    #@songs= Song.search(params[:search])
+    @songs = Song.all(order: 'title')
     @setlist = Setlist.find(params[:id])
     @allocations = @setlist.allocations
     @allocation = Allocation.new
     @selections = Song.all.collect {|s| [ [s.title, s.artist].join(" by "), s.id ]}
+
+    #recommender stuff
+    if @allocations.last != nil
+      @data = @allocations.last.song_id #this will be used as input data for now
+   
+      #find all setlists that contain a specified song
+      @commonAllocations = Allocation.select(:setlist_id).where("song_id = ?", @data).map &:setlist_id
+      @commonSetlists = Setlist.find(@commonAllocations)
+    end
+    
+
+    #find all songs contained in these setlists.
+  
   end
 
 

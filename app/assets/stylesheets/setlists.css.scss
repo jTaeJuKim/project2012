@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div#library{ 
+  min-height: 200px;
   select{
     width: 100%;
   }
@@ -27,9 +28,11 @@ div#setIndex{
 }
 
 div#recSpace{
+  overflow-y: scroll;
   border: solid 1px;
   border-radius: 10px;
   border-color: #D3D3D3;
-  background-color: #F9F9F9;
-  min-height: 150px;
+  //background-color: #F9F9F9;
+  min-height: 200px;
+  max-height: 200px;
 }
