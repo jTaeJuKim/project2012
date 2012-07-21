@@ -2,7 +2,18 @@
   <title><% provide(:title, @user.name)%></title>
   <h3>Profile for <%=@user.name + " " + @user.surname%></h3>
   <h3>Email: <%=@user.email%><br/>Phone: <%=@user.phone%></h3>
-  <h3>Roles: <%= @user.roles.select("description").map(&:description).join(", ") %></h3>
+  <h3>
+  	Roles: 
+  	<% if @user.roles.select("description").empty? %>
+  	   <%= "No roles assigned yet" %>
+  	<% else %>
+  	  <%= @user.roles.select("description").map(&:description).join(", ") %>
+  	<% end %>
+  </h3>
+
+  <% if current_user.admin? && !@user.admin %>
+    <%= button_to "Add Admin", user_path(@user, admin: true), :method => :put, class: "btn btn-large btn-primary"  %>
+  <% end %>
 
 <%else%>
   <h1>Please <%=link_to "sign in", signin_path%> to view this page</h1>

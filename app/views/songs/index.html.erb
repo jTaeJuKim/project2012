@@ -27,6 +27,8 @@
 </table>
 </div>
 
-<div id="newSongButton">
-  <%= link_to "Add new song", new_song_path, class: "btn btn-large btn-primary" %>
-<div>
+<% if current_user.admin? %>
+  <div id="newSongButton">
+    <%= link_to "Add new song", new_song_path, class: "btn btn-large btn-primary" %>
+  <div>
+<% end %>

@@ -14,12 +14,12 @@
 
 	<div id="lyrics">
 		<pre data-key= <%= @song.key%> id="chords"><%= @song.lyrics %></pre>
-		<% if current_user.admin? %>
 			<div id= "editSong">
+				<% if current_user.admin? %>
 				<%= link_to "EDIT", edit_song_path, class: "btn btn-large btn-primary"%>
+				<%end %>
 				<%= link_to "PRINT", '#', onclick: "printpage()", class: "btn btn-large btn-warning" %>
 			</div> 
-		<%end %>
 	</div>
 </div>
 

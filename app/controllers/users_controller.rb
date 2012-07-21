@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   #before_filter :signed_in_user, only: [:edit, :update, :index, :destroy]
-  before_filter :correct_user, only: [:edit, :update]
+  before_filter :correct_user, only: [:edit] #:update
   before_filter :admin_user, only: [:destroy]
 
   def new
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       #send an email to the user
       #UserMailer.welcome_email(@user).deliver
   		flash[:success] = "New user added!"
-  		redirect_to root_path
+  		redirect_to users_path
   	else
   		render 'new'
   	end
@@ -42,7 +42,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(params[:user])
+    @user = User.find(params[:id])
+
+    if params[:admin]
+      flash[:success] = "Admin added!" 
+      @user.update_attribute(:admin, true)
+      redirect_to users_path
+    
+    elsif @user.update_attributes(params[:user])
       # Handle a successful update.
       flash[:success] = "Profile updated"
       sign_in @user
@@ -51,6 +58,9 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+
+
 
   private
 

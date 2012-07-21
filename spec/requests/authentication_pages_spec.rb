@@ -67,10 +67,14 @@ describe "Authentication" do
         it { should_not have_selector('title', text: full_title('Edit details')) }
       end
 
-      describe "submitting a PUT request to the Users#update action" do
-        before{ put user_path(wrong_user) }
-        specify{ response.should redirect_to(root_path) }
-      end
+      #this test originally tested the before filter which redirected
+      #the user to the root path if they were not the correct user for the specified page
+      #however this was removed in order to cater for adding admin users
+
+      # describe "submitting a PUT request to the Users#update action" do
+      #   before{ put user_path(wrong_user) }
+      #   specify{ response.should redirect_to(root_path) }
+      # end
     end
     #end as wrong user
 
