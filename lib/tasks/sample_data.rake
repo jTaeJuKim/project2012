@@ -287,7 +287,7 @@ namespace :db do
     Allocation.create(setlist_id: 13, song_id:27, songPosition:3)
 
     #14
-    Allocation.create(setlist_id: 14,song_id: 36, songPosition:1)
+    Allocation.create(setlist_id: 14,song_id: 38, songPosition:1)
     Allocation.create(setlist_id: 14, song_id:2, songPosition:2)
     Allocation.create(setlist_id:14,song_id: 34, songPosition:3)
     Allocation.create(setlist_id: 14,song_id: 5, songPosition:4)
