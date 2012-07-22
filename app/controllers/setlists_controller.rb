@@ -36,11 +36,6 @@ class SetlistsController < ApplicationController
       @commonAllocations = Allocation.select(:setlist_id).where("song_id = ?", @data).map &:setlist_id
       @commonSetlists = Setlist.find(@commonAllocations)
       
-
-#       Student.find(:all,
-# :conditions => ["seeking_position = ? AND min_hourly = ? AND max_hourly = ?
-#                 AND start_weeks between ?",
-#                 position, min_hourly, max_hourly, start_weeks])
     end
     
 
@@ -59,7 +54,7 @@ class SetlistsController < ApplicationController
     #Allocation parameters
     @allocation.song_id = params[:allocation][:song_id]
     @allocation.setlist_id = @setlist.id
-    @allocation.songPosition = @setlist.songs.count + 1
+    @allocation.position = @setlist.songs.count + 1
 
     if @setlist.update_attributes(params[:setlist])
       if @allocation.save

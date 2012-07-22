@@ -58,13 +58,13 @@
         <tbody>
               <% @commonSetlists.each do |n| %>
               <% @rec = n.allocations %>
-              <% @inputSong =  @rec.select(:songPosition).where("song_id = ?", @allocations.last.song_id).map &:songPosition %>
+              <% @inputSong =  @rec.select(:position).where("song_id = ?", @allocations.last.song_id).map &:position %>
                 <% @rec.each do |s| %>
                     <% if s.setlist_id != @allocations.first.setlist_id %>
                         <tr>
                           <% if s.song.title != @allocations.last.song.title %>
                             <!--if the song is before the song in the set print it -->
-                            <% if s.songPosition ==  @inputSong.join.to_i - 1 || s.songPosition == @inputSong.join.to_i + 1%>
+                            <% if s.position ==  @inputSong.join.to_i - 1 || s.position == @inputSong.join.to_i + 1%>
                               <td><%= s.song.title %></td>
                               <td><%= s.song.artist %></td>
                               <td><%= s.song.key %></td>

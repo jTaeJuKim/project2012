@@ -206,136 +206,134 @@ namespace :db do
   task populate: :environment do
 
     #set 1
-    Allocation.create(setlist_id: 1, song_id: 1, songPosition: 1)
-    Allocation.create(setlist_id: 1, song_id: 2, songPosition: 2)
-    Allocation.create(setlist_id: 1, song_id:3, songPosition: 3)
-    Allocation.create(setlist_id: 1, song_id:4, songPosition: 4)
-
+    Allocation.create(setlist_id: 1, song_id: 1, position: 1)
+    Allocation.create(setlist_id: 1, song_id: 2, position: 2)
+    Allocation.create(setlist_id: 1, song_id:3, position: 3)
+    Allocation.create(setlist_id: 1, song_id:4, position: 4)
     #set 2
-    Allocation.create(setlist_id: 2, song_id:5, songPosition:1)
-    Allocation.create(setlist_id: 2, song_id:6, songPosition:2)
-    Allocation.create(setlist_id: 2, song_id:7, songPosition:3)  
-    Allocation.create(setlist_id: 2,song_id: 8, songPosition:4)
-    Allocation.create(setlist_id: 2, song_id:9, songPosition:5)
+    Allocation.create(setlist_id: 2, song_id:5, position:1)
+    Allocation.create(setlist_id: 2, song_id:6, position:2)
+    Allocation.create(setlist_id: 2, song_id:7, position:3)  
+    Allocation.create(setlist_id: 2,song_id: 8, position:4)
+    Allocation.create(setlist_id: 2, song_id:9, position:5)
 
     #set 3
-    Allocation.create(setlist_id: 3, song_id:10, songPosition:1)
-    Allocation.create(setlist_id: 3, song_id:11, songPosition:2)
-    Allocation.create(setlist_id: 3,song_id: 12, songPosition:3)
-    Allocation.create(setlist_id: 3, song_id:13, songPosition:4)
+    Allocation.create(setlist_id: 3, song_id:10, position:1)
+    Allocation.create(setlist_id: 3, song_id:11, position:2)
+    Allocation.create(setlist_id: 3,song_id: 12, position:3)
+    Allocation.create(setlist_id: 3, song_id:13, position:4)
 
     #4
-    Allocation.create(setlist_id: 4,song_id:14, songPosition:1)
-    Allocation.create(setlist_id: 4,song_id: 15, songPosition:2)
-    Allocation.create(setlist_id: 4,song_id: 16, songPosition:3)
-    Allocation.create(setlist_id: 4,song_id: 17, songPosition:4)
-    Allocation.create(setlist_id: 4,song_id: 18, songPosition:5)
+    Allocation.create(setlist_id: 4,song_id:14, position:1)
+    Allocation.create(setlist_id: 4,song_id: 15, position:2)
+    Allocation.create(setlist_id: 4,song_id: 16, position:3)
+    Allocation.create(setlist_id: 4,song_id: 17, position:4)
+    Allocation.create(setlist_id: 4,song_id: 18, position:5)
 
     #5
-    Allocation.create(setlist_id: 5,song_id: 19, songPosition:1)
-    Allocation.create(setlist_id: 5,song_id: 20, songPosition:2)
-    Allocation.create(setlist_id: 5,song_id: 21, songPosition:3)
-    Allocation.create(setlist_id: 5, song_id:22, songPosition:4)
+    Allocation.create(setlist_id: 5,song_id: 19, position:1)
+    Allocation.create(setlist_id: 5,song_id: 20, position:2)
+    Allocation.create(setlist_id: 5,song_id: 21, position:3)
+    Allocation.create(setlist_id: 5, song_id:22, position:4)
 
     #6
-    Allocation.create(setlist_id: 6, song_id:16, songPosition:1)
-    Allocation.create(setlist_id: 6,song_id: 5, songPosition:2)
-    Allocation.create(setlist_id: 6,song_id: 23, songPosition:3)
-    Allocation.create(setlist_id: 6, song_id:24, songPosition:4)
-
+    Allocation.create(setlist_id: 6, song_id:16, position:1)
+    Allocation.create(setlist_id: 6,song_id: 5, position:2)
+    Allocation.create(setlist_id: 6,song_id: 23, position:3)
+    Allocation.create(setlist_id: 6, song_id:24, position:4)
     #7
-    Allocation.create(setlist_id: 7,song_id: 25, songPosition:1)
-    Allocation.create(setlist_id: 7,song_id: 26, songPosition:2)
-    Allocation.create(setlist_id: 7, song_id:21, songPosition:3)
-    Allocation.create(setlist_id: 7, song_id:27, songPosition:4)
-    Allocation.create(setlist_id: 7,song_id: 7, songPosition:5)
+    Allocation.create(setlist_id: 7,song_id: 25, position:1)
+    Allocation.create(setlist_id: 7,song_id: 26, position:2)
+    Allocation.create(setlist_id: 7, song_id:21, position:3)
+    Allocation.create(setlist_id: 7, song_id:27, position:4)
+    Allocation.create(setlist_id: 7,song_id: 7, position:5)
 
     #8
-    Allocation.create(setlist_id: 8, song_id:28, songPosition:1)
-    Allocation.create(setlist_id: 8, song_id:11, songPosition:2)
-    Allocation.create(setlist_id: 8, song_id:29, songPosition:3)
-    Allocation.create(setlist_id: 8,song_id: 30, songPosition:4)
+    Allocation.create(setlist_id: 8, song_id:28, position:1)
+    Allocation.create(setlist_id: 8, song_id:11, position:2)
+    Allocation.create(setlist_id: 8, song_id:29, position:3)
+    Allocation.create(setlist_id: 8,song_id: 30, position:4)
 
-    #9
-    Allocation.create(setlist_id: 9, song_id:25, songPosition:1)
-    Allocation.create(setlist_id: 9, song_id:16, songPosition:2)
-    Allocation.create(setlist_id: 9, song_id:31, songPosition:3)
-    Allocation.create(setlist_id: 9,song_id: 32, songPosition:4)
+    #9p
+    Allocation.create(setlist_id: 9, song_id:25, position:1)
+    Allocation.create(setlist_id: 9, song_id:16, position:2)
+    Allocation.create(setlist_id: 9, song_id:31, position:3)
+    Allocation.create(setlist_id: 9,song_id: 32, position:4)
 
     #10
-    Allocation.create(setlist_id: 10, song_id:33, songPosition:1)
-    Allocation.create(setlist_id: 10, song_id:2, songPosition:2)
-    Allocation.create(setlist_id: 10, song_id:8, songPosition:3)
-    Allocation.create(setlist_id: 10, song_id:9, songPosition:4)
-    Allocation.create(setlist_id: 10, song_id:24, songPosition:5)
+    Allocation.create(setlist_id: 10, song_id:33, position:1)
+    Allocation.create(setlist_id: 10, song_id:2, position:2)
+    Allocation.create(setlist_id: 10, song_id:8, position:3)
+    Allocation.create(setlist_id: 10, song_id:9, position:4)
+    Allocation.create(setlist_id: 10, song_id:24, position:5)
 
     #11
-    Allocation.create(setlist_id: 11, song_id:5, songPosition:1)
-    Allocation.create(setlist_id: 11, song_id:34, songPosition:2)
-    Allocation.create(setlist_id: 11, song_id:29, songPosition:3)
-    Allocation.create(setlist_id: 11, song_id:7, songPosition:4)
+    Allocation.create(setlist_id: 11, song_id:5, position:1)
+    Allocation.create(setlist_id: 11, song_id:34, position:2)
+    Allocation.create(setlist_id: 11, song_id:29, position:3)
+    Allocation.create(setlist_id: 11, song_id:7,position:4)
 
     #12
-    Allocation.create(setlist_id: 12, song_id:35, songPosition:1)
-    Allocation.create(setlist_id: 12, song_id:36, songPosition:2)
-    Allocation.create(setlist_id: 12, song_id:29, songPosition:3)
-    Allocation.create(setlist_id: 12, song_id:3, songPosition:4)
+    Allocation.create(setlist_id: 12, song_id:35, position:1)
+    Allocation.create(setlist_id: 12, song_id:36, position:2)
+    Allocation.create(setlist_id: 12, song_id:29, position:3)
+    Allocation.create(setlist_id: 12, song_id:3, position:4)
 
     #13
-    Allocation.create(setlist_id: 13, song_id:28, songPosition:1)
-    Allocation.create(setlist_id: 13, song_id:37, songPosition:2)
-    Allocation.create(setlist_id: 13, song_id:27, songPosition:3)
+    Allocation.create(setlist_id: 13, song_id:28, position:1)
+    Allocation.create(setlist_id: 13, song_id:37, position:2)
+    Allocation.create(setlist_id: 13, song_id:27, position:3)
 
     #14
-    Allocation.create(setlist_id: 14,song_id: 38, songPosition:1)
-    Allocation.create(setlist_id: 14, song_id:2, songPosition:2)
-    Allocation.create(setlist_id:14,song_id: 34, songPosition:3)
-    Allocation.create(setlist_id: 14,song_id: 5, songPosition:4)
-    Allocation.create(setlist_id: 14,song_id: 7, songPosition:5)
+    Allocation.create(setlist_id: 14,song_id: 38, position:1)
+    Allocation.create(setlist_id: 14, song_id:2, position:2)
+    Allocation.create(setlist_id:14,song_id: 34, position:3)
+    Allocation.create(setlist_id: 14,song_id: 5, position:4)
+    Allocation.create(setlist_id: 14,song_id: 7, position:5)
 
     #15song_id:
-    Allocation.create(setlist_id: 15, song_id:39, songPosition:1)
-    Allocation.create(setlist_id: 15, song_id:36, songPosition:2)
-    Allocation.create(setlist_id: 15, song_id:4, songPosition:3)
+    Allocation.create(setlist_id: 15, song_id:39, position:1)
+    Allocation.create(setlist_id: 15, song_id:36, position:2)
+    Allocation.create(setlist_id: 15, song_id:4, position:3)
 
     #16song_id:
-    Allocation.create(setlist_id: 16, song_id:33, songPosition:1)
-    Allocation.create(setlist_id: 16, song_id:14, songPosition:2)
-    Allocation.create(setlist_id: 16, song_id:4, songPosition:3)
-    Allocation.create(setlist_id: 16, song_id:40, songPosition:4)
-    Allocation.create(setlist_id: 16, song_id:41, songPosition:5)
+    Allocation.create(setlist_id: 16, song_id:33, position:1)
+    Allocation.create(setlist_id: 16, song_id:14, position:2)
+    Allocation.create(setlist_id: 16, song_id:4, position:3)
+    Allocation.create(setlist_id: 16, song_id:40, position:4)
+    Allocation.create(setlist_id: 16, song_id:41, position:5)
 
     #17
 
-    Allocation.create(setlist_id: 17,song_id: 42, songPosition:1)
-    Allocation.create(setlist_id: 17,song_id: 43, songPosition:2)
-    Allocation.create(setlist_id: 17,song_id: 44, songPosition:3)
+    Allocation.create(setlist_id: 17,song_id: 42, position:1)
+    Allocation.create(setlist_id: 17,song_id: 43, position:2)
+    Allocation.create(setlist_id: 17,song_id: 44, position:3)
 
     #18
-    Allocation.create(setlist_id: 18,song_id: 33, songPosition:1)
-    Allocation.create(setlist_id: 18, song_id:27, songPosition:2)
-    Allocation.create(setlist_id: 18, song_id:29, songPosition:3)
-    Allocation.create(setlist_id: 18, song_id:41, songPosition:4)
-    Allocation.create(setlist_id: 18,song_id: 17, songPosition:5)
+    Allocation.create(setlist_id: 18,song_id: 33, position:1)
+    Allocation.create(setlist_id: 18, song_id:27, position:2)
+    Allocation.create(setlist_id: 18, song_id:29, position:3)
+    Allocation.create(setlist_id: 18, song_id:41, position:4)
+    Allocation.create(setlist_id: 18,song_id: 17, position:5)
 
     #19
-    Allocation.create(setlist_id: 19, song_id:35, songPosition:1)
-    Allocation.create(setlist_id: 19, song_id:23, songPosition:2)
-    Allocation.create(setlist_id: 19,song_id: 45, songPosition:3)
-    Allocation.create(setlist_id: 19, song_id:46, songPosition:4)
-    Allocation.create(setlist_id: 19,song_id: 47, songPosition:5)
+    Allocation.create(setlist_id: 19, song_id:35, position:1)
+    Allocation.create(setlist_id: 19, song_id:23, position:2)
+    Allocation.create(setlist_id: 19,song_id: 45, position:3)
+    Allocation.create(setlist_id: 19, song_id:46, position:4)
+    Allocation.create(setlist_id: 19,song_id: 47, position:5)
 
     #20
-    Allocation.create(setlist_id: 20, song_id:39, songPosition:1)
-    Allocation.create(setlist_id: 20,song_id: 48, songPosition:2)
-    Allocation.create(setlist_id: 20,song_id: 49, songPosition:3)
-    Allocation.create(setlist_id: 20, song_id:29, songPosition:4)
-    Allocation.create(setlist_id: 20, song_id:50, songPosition:5)
+    Allocation.create(setlist_id: 20, song_id:39, position:1)
+    Allocation.create(setlist_id: 20,song_id: 48, position:2)
+    Allocation.create(setlist_id: 20,song_id: 49, position:3)
+    Allocation.create(setlist_id: 20, song_id:29, position:4)
+    Allocation.create(setlist_id: 20, song_id:50, position:5)
 
     #21
-    Allocation.create(setlist_id: 21,song_id: 15, songPosition:1)
-    Allocation.create(setlist_id: 21,song_id: 10, songPosition:2)
-    Allocation.create(setlist_id: 21,song_id: 3, songPosition:3)
+    Allocation.create(setlist_id: 21,song_id: 15, position:1)
+    Allocation.create(setlist_id: 21,song_id: 10, position:2)
+    Allocation.create(setlist_id: 21,song_id: 3, position:3)
 
 
   end #end allocations

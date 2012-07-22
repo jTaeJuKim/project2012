@@ -11,18 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717113616) do
+ActiveRecord::Schema.define(:version => 20120722193924) do
 
   create_table "allocations", :force => true do |t|
     t.integer  "setlist_id"
     t.integer  "song_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "songPosition"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "position"
   end
 
+  add_index "allocations", ["position"], :name => "index_allocations_on_songPosition"
   add_index "allocations", ["setlist_id"], :name => "index_allocations_on_setlist_id"
-  add_index "allocations", ["songPosition"], :name => "index_allocations_on_songPosition"
   add_index "allocations", ["song_id"], :name => "index_allocations_on_song_id"
 
   create_table "assignments", :force => true do |t|

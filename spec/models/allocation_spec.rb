@@ -4,7 +4,7 @@ describe Allocation do
 
   let(:song){ FactoryGirl.create(:song) }
   let(:setlist){ FactoryGirl.create(:setlist) }
-  let(:allocation){ setlist.allocations.build(song_id: song.id, songPosition: 1) }
+  let(:allocation){ setlist.allocations.build(song_id: song.id, position: 1) }
 
   subject{ allocation }
 
@@ -12,7 +12,7 @@ describe Allocation do
 
   it{ should respond_to(:setlist_id) }
   it{ should respond_to(:song_id) }
-  it{ should respond_to(:songPosition) }
+  it{ should respond_to(:position) }
 
   describe "When setlist id is not present" do
   	before{ allocation.setlist_id = "" }

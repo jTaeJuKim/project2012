@@ -1,5 +1,5 @@
 class Allocation < ActiveRecord::Base
-  attr_accessible :setlist_id, :song_id, :songPosition
+  attr_accessible :setlist_id, :song_id, :position
 
   belongs_to :song
   belongs_to :setlist 
