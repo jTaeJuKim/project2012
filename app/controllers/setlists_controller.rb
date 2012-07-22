@@ -35,7 +35,12 @@ class SetlistsController < ApplicationController
       #find all setlists that contain a specified song
       @commonAllocations = Allocation.select(:setlist_id).where("song_id = ?", @data).map &:setlist_id
       @commonSetlists = Setlist.find(@commonAllocations)
-      # conditions:["id != ?", @setlist.id]
+      
+
+#       Student.find(:all,
+# :conditions => ["seeking_position = ? AND min_hourly = ? AND max_hourly = ?
+#                 AND start_weeks between ?",
+#                 position, min_hourly, max_hourly, start_weeks])
     end
     
 
