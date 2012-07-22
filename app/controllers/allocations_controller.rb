@@ -29,8 +29,8 @@ class AllocationsController < ApplicationController
 
      @otherSongs.each do |n|
 
-      if(n.songPosition > @allocation.songPosition)
-        n.songPosition = n.songPosition - 1
+      if(n.position > @allocation.position)
+        n.position = n.position - 1
         n.save!
       end
       
