@@ -12,6 +12,12 @@ FactoryGirl.define do
     end	
   end
 
+  factory :post do
+    subject "Test Title"
+    content "Lorem ipsum"
+    user
+  end
+
   factory :song do
     title "Example Song"
     artist "Example Artist"

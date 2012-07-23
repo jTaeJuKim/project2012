@@ -38,11 +38,11 @@ end
 #
 # Table name: allocations
 #
-#  id           :integer         not null, primary key
-#  setlist_id   :integer
-#  song_id      :integer
-#  created_at   :datetime        not null
-#  updated_at   :datetime        not null
-#  songPosition :integer
+#  id         :integer         not null, primary key
+#  setlist_id :integer
+#  song_id    :integer
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#  position   :integer
 #
 

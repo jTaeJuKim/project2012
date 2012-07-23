@@ -1,0 +1,29 @@
+<h3>Show all posts</h3>
+
+<div>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>POST SUBJECT</th>
+				<th>POSTED BY</th>
+				<th>POSTED ON</th>
+				<th>COMMENTS</th>
+				<% if current_user.admin? %>
+				  <th>DELETE POST</th>
+				<% end %>
+			</tr>
+		</thead>
+		<tbody>
+			<% if @posts.empty? %>
+			  <tr><td>NO POSTS HAVE BEEN MADE YET<td></td>
+			<% else %>
+			<%= render @posts %>
+			<% end %>
+		</tbody>
+	</table>
+
+</div>
+
+<div>
+	<%= link_to "NEW POST", new_post_path, class: "btn btn-large btn-primary" %>
+</div>

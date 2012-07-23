@@ -1,6 +1,8 @@
 Proj::Application.routes.draw do
 
 
+  get "posts/new"
+
   get "categorizations/new"
 
   get "categories/new"
@@ -13,6 +15,7 @@ Proj::Application.routes.draw do
   resources :services
   resources :categories
   resources :categorizations
+  resources :posts
 
   resources :setlists do
     get :songs

@@ -35,13 +35,14 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+  it { should respond_to(:posts)}
 
   it{should be_valid}
   it{ should_not be_admin }
 
   describe "with admin set true" do
     before{@user.toggle!(:admin)}
-    it{ should be_admin}
+    it{ should be_admin }
   end
 
   describe "remember token" do
@@ -132,6 +133,21 @@ describe User do
       let(:user_for_invalid_password){ found_user.authenticate("invalid") }
       it{ should_not == user_for_invalid_password }
       specify{ user_for_invalid_password.should be_false }
+    end
+  end
+
+  describe "associations with posts model" do
+
+    before { @user.save }
+    let!(:older_post) do 
+      FactoryGirl.create(:post, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_post) do
+      FactoryGirl.create(:post, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the posts with newest first" do
+      @user.posts.should == [newer_post, older_post]
     end
   end
 end

@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
 
   has_many :assignments
   has_many :roles, through: :assignments
+  has_many :posts
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

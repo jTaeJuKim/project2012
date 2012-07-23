@@ -1,0 +1,12 @@
+<h3><%= link_to "<< BACK TO ALL POSTS", posts_path %></h3>
+
+<h3>Subject: <%= @post.subject %></h3>
+<h3>Posted by <%= "#{@post.user.name} #{@post.user.surname}" %></h3>
+<h3>Posted at: <%= @post.created_at %></h3>
+<div id="postContents" class="span12 offset1">
+	<pre><%= @post.content %></pre>
+	  <% if current_user.id == @post.user.id %>
+		 <%= link_to "EDIT", edit_post_path(@post), class: "btn btn-large btn-primary" %>
+	  <% end %>
+</div>
+
