@@ -7,7 +7,9 @@
 	<td><%= "#{post.user.name} #{post.user.surname}" %> </td>
 	<td><%= post.created_at %></td>
 	<td><%= post.comments.count %></td>
+	<% if current_user.admin? %>
 	<td><%= link_to "DELETE", post, method: :delete,
 	                                data: { confirm: 
 	                                	"Are you sure you want to delete this post?" }%></td>
+	<% end %>
 </tr>

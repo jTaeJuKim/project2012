@@ -7,6 +7,7 @@ describe "Song pages" do
   before do
     @user = User.create(name: "Jim", surname: "User", email:"jim@jim.com",
       phone:"01224555555", password: "foobar", password_confirmation: "foobar")
+    @user.toggle!(:admin)
 
     Role.create(description: "Vox 1")
     Role.create(description: "Vox 2")

@@ -2,6 +2,7 @@
 
 <div id="tagForm" class="span9">
 	<%= form_for(@categorization) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
 	   <%= f.label :song_id, "Pick a song" %>
 	   <%=f.select :song_id, options_for_select(
 	   	Song.all.collect {|s| [ [s.title,s.artist].join(" by "), s.id ] }.sort!, 

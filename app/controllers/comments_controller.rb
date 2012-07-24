@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 	    @comment = @comment = @post.comments.build(params[:comment])
 	    
 	    if @comment.save
+	      flash[:success] = "Comment posted!"
 	      redirect_to post_path(@post)
 	    else
 	      flash[:fail] = "Comment not added"

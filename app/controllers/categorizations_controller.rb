@@ -11,8 +11,7 @@ class CategorizationsController < ApplicationController
   		redirect_to songs_path
   	else
   		#FAIL!
-  		flash[:fail] = "TAG ERROR"
-  		redirect_to songs_path
+  		render 'new'
   	end
   end
 

@@ -2,7 +2,7 @@
 <div class="row">
    <div class="span6 offset3">
       <%=form_for(@role) do|f|%>
-         <%= render 'shared/role_error_messages' %>
+         <%= render 'shared/error_messages', object: f.object %>
 
          <%=f.label :description, "Describe the role below" %>
          <%=f.text_field :description%>

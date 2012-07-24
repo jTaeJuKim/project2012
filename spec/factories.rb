@@ -50,5 +50,6 @@ FactoryGirl.define do
   factory :category do
     tag "Test Tag"
   end
+
   
 end

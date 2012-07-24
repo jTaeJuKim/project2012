@@ -28,6 +28,7 @@ describe "UserPages" do
     it "should list each user" do
       User.all.each do |user|
         page.should have_selector('td', text: user.name)
+        
       end
     end
 

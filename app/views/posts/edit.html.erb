@@ -4,6 +4,7 @@
 	  <%= render 'shared/error_messages', object: f.object %>
 	  <%= f.label :subject, "Subject" %>
 	  <%= f.text_field :subject %>
+	  <%= f.label :content, "Post" %>
 	  <div class="field">
 	    <%= f.text_area :content, placeholder: "Write a new post here..." %>
 	  </div>

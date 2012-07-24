@@ -21,8 +21,8 @@ class UsersController < ApplicationController
       sign_in @user
       #send an email to the user
       #UserMailer.welcome_email(@user).deliver
-  		flash[:success] = "New user added!"
-  		redirect_to users_path
+  		flash[:success] = "Account created!"
+  		redirect_to root_path
   	else
   		render 'new'
   	end
