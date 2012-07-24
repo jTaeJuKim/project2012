@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723093057) do
+ActiveRecord::Schema.define(:version => 20120723163201) do
 
   create_table "allocations", :force => true do |t|
     t.integer  "setlist_id"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(:version => 20120723093057) do
 
   add_index "categorizations", ["category_id"], :name => "index_categorizations_on_category_id"
   add_index "categorizations", ["song_id"], :name => "index_categorizations_on_song_id"
+
+  create_table "comments", :force => true do |t|
+    t.integer  "post_id"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "poster"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "subject"

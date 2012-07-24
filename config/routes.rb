@@ -7,20 +7,26 @@ Proj::Application.routes.draw do
 
   get "categories/new"
 
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
-  resources :songs
-  resources :roles
+  resources :allocations
   resources :assignments
-  resources :services
   resources :categories
   resources :categorizations
-  resources :posts
+  resources :comments
+
+  resources :posts do
+    resources :comments
+  end
+
+  resources :roles
+  resources :services
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :songs
+  resources :users
 
   resources :setlists do
     get :songs
   end
-  resources :allocations
+  
   
   root to: 'services#index'
 

@@ -8,5 +8,43 @@
 	  <% if current_user.id == @post.user.id %>
 		 <%= link_to "EDIT", edit_post_path(@post), class: "btn btn-large btn-primary" %>
 	  <% end %>
+
+</div>
+
+<div id="commentForm" class="span11 offset2">
+
+	<%= form_for [@post, @comment] do |f| %>
+	    <%= f.hidden_field :post_id, value: @post.id %>
+		<%= f.hidden_field :poster, value: @poster %>
+		<%= f.label :content, "WRITE COMMENT" %>
+		<%= f.text_area :content, rows: 3 %>
+		<%= f.submit "Post", class: "btn btn-primary btn-large" %>
+    <% end %>
+</div>
+
+<div id="commentArea" class="span11 offset2">
+	<% if @post.comments.first.content.nil? %>
+	  <ul>
+	  	<p>No comments posted yet</p>
+	  </ul>
+	<% else %>
+	  <% @post.comments.each do |n| %>
+	     <% if !n.content.nil? %>
+	     <div id="comment" class="span10">
+	     	<p><%= n.content %></p>
+	     	<h5>
+	     		<%= "Posted by: #{n.poster} at #{n.created_at}" %>
+
+	     		<% if current_user.admin?%>
+	     		<%= link_to "Delete comment", n, method: :delete,
+	                                data: { confirm: 
+	                                	"Are you sure you want to delete this post?" }%>
+	            <%end%>
+
+	     	</h5>
+	     </div>
+	     <% end %>
+	  <% end %>
+	<% end %>
 </div>
 

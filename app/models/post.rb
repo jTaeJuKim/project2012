@@ -7,6 +7,11 @@ class Post < ActiveRecord::Base
 
   #every post belongs to one user
   belongs_to :user
+  has_many :comments
+
+
+  accepts_nested_attributes_for :comments, :reject_if => proc { |attributes| attributes['content'].blank? }
+
 
   #orders with newest posts first
   default_scope order: 'posts.created_at DESC'

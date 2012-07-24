@@ -1,4 +1,11 @@
 class PostsController < ApplicationController
+
+  def show
+    @post = Post.find(params[:id])
+    @poster = "#{current_user.name} #{current_user.surname} (#{current_user.email})"
+    @comment = @post.comments.build
+  end
+
   def new
   	@post = current_user.posts.build if signed_in?
   end
@@ -19,6 +26,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+ 
     if @post.update_attributes(params[:post])
       flash[:success] = "Changes saved!"
       redirect_to post_path(@post)
@@ -38,7 +46,4 @@ class PostsController < ApplicationController
   	@posts = Post.all
   end
 
-  def show
-  	@post = Post.find(params[:id])
-  end
 end
