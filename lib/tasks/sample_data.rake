@@ -340,9 +340,11 @@ namespace :db do
 
   desc "Fill database with categories"
   task populate: :environment do
-    testCat = ["fast tempo", "slow tempo", "medium tempo"]
+    testCat = ["fast", "slow", "medium", "grace", 
+      "salvation", "God's power", "communion", "contemporary", 
+      "traditional", "love", "thanksgiving", "hope"]
 
-    3.times do |c|
+    12.times do |c|
       Category.create(tag: testCat[c])
     end 
   end # end categories

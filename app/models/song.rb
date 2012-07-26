@@ -23,17 +23,12 @@ class Song < ActiveRecord::Base
     res
   end
 
-
-#   def self.search(search)
-#     res=includes(:categories).order('title')
-#     res=res.where('title LIKE :search OR lyrics LIKE :search OR artist LIKE :search',:search=>"%#{search}%") if search
-#     res
-#   end
-
-#    def self.search_by_category_desc(search)
-#     res=joins(:categories).order('title')
-#     res=res.where('categories.tag LIKE ?',"%#{search}%")
-#   end
+  def self.search_by_category(search)
+    res=joins(:categories).order('title')
+    res=res.where('categories.tag LIKE ?',"%#{search}%")
+    #use in instead of like?
+  end
+  
 
 end
 # == Schema Information

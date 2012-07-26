@@ -16,4 +16,70 @@
 	  	 <%end%>	
 	  </tbody>
 	 </table>
+
+    <h2>Recommendations</h2>
+
+
+  <div id="recWork">
+      <% if @allocations.empty? %>
+      <h3>Please add a song to the setlist in order to view recommendations.</h3>
+      <% else %>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Key</th>
+            <th>Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @existing = [] %>
+          <!-- For each of the setlists which contain the last song in the current setlist, do N -->
+           <% @commonSetlists.each do |n| %>
+              <!-- caseData represents all the songs in setlist n, which contains the input song -->
+              <% @caseData = n.allocations %>
+              <!--get position of the input song in the setlist -->
+              <% @inputSong =  @caseData.select(:position).where("song_id = ?", 
+              @allocations.last.song_id).map &:position %>
+              <!--For each song in the setlist, do "s" -->
+                <% @caseData.each do |s| %>
+                <!-- ensure that the current setlist is not used to make recommendations -->
+                    <% if s.setlist_id != @allocations.first.setlist_id %>
+                        <!--ensure that the input song isn't included in the recommendations -->
+                          <% if s.song.title != @allocations.last.song.title %>
+                            <!--if the song is used directly before or after the input song in setlist n -->
+                            <% if s.position ==  @inputSong.join.to_i - 1 || s.position == @inputSong.join.to_i + 1%>
+                              <!-- Find songs which share similar tags -->
+                              <!--current form is wrong as it just looks at the last song in the current set-->
+                                 <% @similarTags = Song.joins(:categories).where('categories.id IN(?)', 
+                                 Song.find(s.song_id).categorizations.select("category_id").map(&:category_id)).order('title') %>
+               
+                                  <!-- print the songs from @similarTags into the table -->
+                                  <% @similarTags.each do |t| %>
+                                  <!-- Don't print any song twice -->
+                                  <% if !@existing.include? t.id %>
+                                      <% if t.id != @allocations.last.song_id %>
+                                          <tr>
+            	                              <td><%= t.title %></td>
+            	                              <td><%= t.artist %></td>
+            	                              <td><%= t.key %></td>
+            	                              <td><%= t.categories.select("tag").map(&:tag).join(", ") %></td>
+              	                          </tr>
+                                          <% @existing.push t.id %>
+                                      <% end %>
+                                  <% end %>
+                              <% end %>
+                            <% end %>
+                          <% end %>        
+                    <% end %>
+                <% end %>
+              <% end %>
+             <% end %> 
+
+        </tbody>
+      </table>
+    </div> 
+
+
    </div>

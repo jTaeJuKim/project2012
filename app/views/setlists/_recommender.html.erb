@@ -1,5 +1,5 @@
- <h2>Recommendations</h2>
- <p>These recommendations are based on songs which have been used in the past with the last song in the current setlist</p>
+
+ <p>All songs which have been used with the last song in the current set</p>
     <div id="recSpace">
       <% if @allocations.empty? %>
       <h3>Please add a song to the setlist in order to view recommendations.</h3>
@@ -38,15 +38,15 @@
     </div> 
   </div>
 
-<!--Other Work -->
+<!--Recommender for songs used in sequence-->
   <div class="span7">
+    <p>Songs selected before/after the last song in other setlists</p>
       <div id="beforeSpace">
-      <p>Songs selected before/after the last song in other setlists (work in progress)</p>
+      
       <% if @allocations.empty? %>
       <h3>Please add a song to the setlist in order to view recommendations.</h3>
       <% else %>
       <table class="table table-bordered table-striped">
-
         <thead>
           <tr>
             <th>Title</th>
@@ -56,6 +56,7 @@
           </tr>
         </thead>
         <tbody>
+              <% @existing = [] %>
               <% @commonSetlists.each do |n| %>
               <% @rec = n.allocations %>
               <% @inputSong =  @rec.select(:position).where("song_id = ?", @allocations.last.song_id).map &:position %>
@@ -65,10 +66,13 @@
                           <% if s.song.title != @allocations.last.song.title %>
                             <!--if the song is before the song in the set print it -->
                             <% if s.position ==  @inputSong.join.to_i - 1 || s.position == @inputSong.join.to_i + 1%>
-                              <td><%= s.song.title %></td>
-                              <td><%= s.song.artist %></td>
-                              <td><%= s.song.key %></td>
-                              <td><%= s.song.categories.select("tag").map(&:tag).join(", ") %></td>
+                                <% if !@existing.include? s.id %>
+                                  <td><%= s.song.title %></td>
+                                  <td><%= s.song.artist %></td>
+                                  <td><%= s.song.key %></td>
+                                  <td><%= s.song.categories.select("tag").map(&:tag).join(", ") %></td>
+                                  <% @existing.push s.id %>
+                                <% end %>
                             <% end %>
                             
 
@@ -84,4 +88,5 @@
       
     </div> 
   </div>
+
 

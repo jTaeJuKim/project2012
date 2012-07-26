@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 div#library{ 
-  min-height: 200px;
+  min-height: 15  0px;
   select{
     width: 100%;
   }
@@ -15,11 +15,11 @@ div#songSelection{
 }
 
 div#currentSet{
-  clear:both; 
+  clear: both;
 }
 
 .btn#addSongToSet{
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
 }
 
 div#setIndex{
@@ -34,11 +34,25 @@ div#recSpace{
   border-color: #D3D3D3;
   min-height: 170px;
   max-height: 170px;
+  margin-bottom:40px;
 }
 
 div#beforeSpace{
-  margin-top: 40px;
+  margin-top: 10px;
   overflow-y: scroll;
   min-height: 170px;
-  max-height: 170px; 
+  max-height: 170px;
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: #D3D3D3;
+
+}
+
+div#recWork{
+  overflow-y: scroll;
+  min-height: 170px;
+  max-height: 170px;
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: #D3D3D3; 
 }
