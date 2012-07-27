@@ -51,6 +51,46 @@ namespace :db do
       password_confirmation: "testing")
     tester.toggle!(:admin)
 
+    tester1 = User.create!(name: "Gareth",
+      surname: "Donaldson",
+      email: "g.donaldson@test.com",
+      phone: "01224111111",
+      password: "testing",
+      password_confirmation: "testing")
+    tester1.toggle!(:admin)
+
+    tester2 = User.create!(name: "Graham",
+      surname: "Dargie",
+      email: "g.dargie@test.com",
+      phone: "01224111111",
+      password: "testing",
+      password_confirmation: "testing")
+    tester2.toggle!(:admin)
+
+    tester3 = User.create!(name: "Fran Hutchison",
+      surname: "Gordon",
+      email: "f.hutchison@test.com",
+      phone: "01224111111",
+      password: "testing",
+      password_confirmation: "testing")
+    tester3.toggle!(:admin)
+
+    tester4 = User.create!(name: "Tony",
+      surname: "Duncan",
+      email: "t.duncan@test.com",
+      phone: "01224111111",
+      password: "testing",
+      password_confirmation: "testing")
+    tester4.toggle!(:admin)
+
+    tester5 = User.create!(name: "Barry",
+      surname: "McAllister",
+      email: "b.mcallister@test.com",
+      phone: "01224111111",
+      password: "testing",
+      password_confirmation: "testing")
+    tester.toggle!(:admin)
+
   end #end user script
 
 
