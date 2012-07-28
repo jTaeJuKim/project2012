@@ -51,9 +51,9 @@
                             <!--if the song is used directly before or after the input song in setlist n -->
                             <% if s.position ==  @inputSong.join.to_i - 1 || s.position == @inputSong.join.to_i + 1%>
                               <!-- Find songs which share similar tags -->
-                              <!--current form is wrong as it just looks at the last song in the current set-->
+                  
                                  <% @similarTags = Song.joins(:categories).where('categories.id IN(?)', 
-                                 Song.find(s.song_id).categorizations.select("category_id").map(&:category_id)).order('title') %>
+                                 Song.find(s.song_id).categorizations.select("category_id").map(&:category_id)) %>
                
                                   <!-- print the songs from @similarTags into the table -->
                                   <% @similarTags.each do |t| %>

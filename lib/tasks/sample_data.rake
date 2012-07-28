@@ -380,11 +380,15 @@ namespace :db do
 
   desc "Fill database with categories"
   task populate: :environment do
-    testCat = ["fast", "slow", "medium", "grace", 
-      "salvation", "God's power", "communion", "contemporary", 
-      "traditional", "love", "thanksgiving", "hope"]
+    # testCat = ["fast", "slow", "medium", "grace", 
+    #   "salvation", "God's power", "communion", "contemporary", 
+    #   "traditional", "love", "thanksgiving", "hope"]
 
-    12.times do |c|
+    testCat = ["Tag A", "Tag B" ,"Tag C", "Tag D", "Tag E", "Tag F", 
+      "Tag G", "Tag H", "Tag I", "Tag J", "Tag K", "Tag L", 
+      "Tag M", "Tag N", "Tag O" , "Tag P", "Tag Q", "Tag R"]
+
+    18.times do |c|
       Category.create(tag: testCat[c])
     end 
   end # end categories
@@ -392,11 +396,18 @@ namespace :db do
   desc "Fill database with categorizations"
   task populate: :environment do
 
-  cat_id = [3, 1, 2, 2, 1, 3, 3, 3, 2, 1,
-    1, 2, 2, 1, 1, 3, 2, 3, 1, 3,
-    2, 2, 3, 3, 1, 1, 3, 1, 2, 2,
-    2, 2, 1, 1, 1, 1, 2, 1, 3, 2,
-    2, 3, 3, 2, 1, 3, 2, 1, 1, 2]
+  # cat_id = [3, 1, 2, 2, 1, 3, 3, 3, 2, 1,
+  #   1, 2, 2, 1, 1, 3, 2, 3, 1, 3,
+  #   2, 2, 3, 3, 1, 1, 3, 1, 2, 2,
+  #   2, 2, 1, 1, 1, 1, 2, 1, 3, 2,
+  #   2, 3, 3, 2, 1, 3, 2, 1, 1, 2]
+  
+
+  cat_id = [1, 2, 3, 18, 5, 6, 7, 8, 17, 10,
+            17, 12, 3, 4, 14, 6, 14, 8, 9, 13,
+            16, 16, 11, 11, 12, 13, 7, 18, 13, 10,
+            1, 3, 3, 15, 14, 1, 7, 17, 9, 12,
+            14, 2, 5, 15, 5, 10, 18, 8, 9, 11]
 
     50.times do |c|
       Categorization.create(category_id: cat_id[c], song_id: c + 1)
