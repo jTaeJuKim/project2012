@@ -67,8 +67,8 @@ namespace :db do
       password_confirmation: "testing")
     tester2.toggle!(:admin)
 
-    tester3 = User.create!(name: "Fran Hutchison",
-      surname: "Gordon",
+    tester3 = User.create!(name: "Fran",
+      surname: "Hutchison",
       email: "f.hutchison@test.com",
       phone: "01224111111",
       password: "testing",
