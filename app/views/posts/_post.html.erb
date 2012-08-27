@@ -4,7 +4,13 @@
 
 <tr>
 	<td><%= link_to post.subject, post %></td>
-	<td><%= "#{post.user.name} #{post.user.surname}" %> </td>
+	<td>
+		<% if post.user != nil %>
+		<%= "#{post.user.name} #{post.user.surname}" %>
+		<% else %>
+		<%= "This user has been deleted" %>
+		<% end %>
+	</td>
 	<td><%= post.created_at %></td>
 	<td><%= post.comments.count %></td>
 	<% if current_user.admin? %>
